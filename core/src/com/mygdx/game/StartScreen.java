@@ -49,8 +49,15 @@ public class StartScreen extends ScreenAdapter {
         } else {
             Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, START_MESSAGE, Color.WHITE, Gdx.graphics.getWidth(), Align.center, false), 0, 100);
         }
-        batch.draw(new Texture(black),0,0);
+        Texture blackTexture = new Texture(black);
+        batch.draw(blackTexture,0,0);
         batch.end();
+        
+        black.dispose();
+        black = null;
+        blackTexture.dispose();
+        blackTexture = null;
+        
     }
 
     private void update() {
