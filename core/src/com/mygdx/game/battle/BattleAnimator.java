@@ -21,7 +21,7 @@ public class BattleAnimator {
     UseAbility currentCaller;
 
 
-    public void BattleAnimator(){
+    public BattleAnimator(){
 
     }
 

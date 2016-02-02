@@ -89,7 +89,8 @@ project(":core") {
         compile "com.kotcrab.vis:vis-runtime:0.2.1"
         compile "net.dermetfan.libgdx-utils:libgdx-utils:0.13.1"
         compile "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.1"
-        testCompile "junit:junit:+" 
+        testCompile "junit:junit:+"
+        testCompile "org.mockito:mockito-core:1.+"
     }
 }
 
