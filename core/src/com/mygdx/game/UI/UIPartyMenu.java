@@ -21,6 +21,10 @@ public class UIPartyMenu extends UIComponent {
     private int playerSelected, menuSelected;
 
     private List<UIPlayer> playerList;
+    
+    private UIMessageBox statsDisplay = new UIMessageBox("STATS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2, (y + height + 4), width/6, 0, 10);
+    private UIMessageBox skillsDisplay = new UIMessageBox("SKILLS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10);
+    private UIMessageBox equipmentDisplay = new UIMessageBox("EQUIPMENT", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10);
 
     public UIPartyMenu(float x, float y, float width, float height, PartyManager party) {
         super(x, y, width, height);
@@ -41,29 +45,32 @@ public class UIPartyMenu extends UIComponent {
     public void render(SpriteBatch batch, NinePatch patch) {
 
         if (show) {
+
+        	statsDisplay.setColour(Color.LIGHT_GRAY);
+        	skillsDisplay.setColour(Color.LIGHT_GRAY);
+        	equipmentDisplay.setColour(Color.LIGHT_GRAY);
+        	
             new UIMessageBox("", Assets.consolas22, Color.WHITE, Align.center, x, y, width, height).render(batch, patch);
             for (int i=0;i<playerList.size();i++) {
                 playerList.get(i).render(batch, patch);
             }
             if (menuSelected == 0) {
-                new UIMessageBox("STATS", Assets.consolas22, Color.WHITE, Align.center, x+width/2, (y + height + 4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("SKILLS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("EQUIPMENT", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10).render(batch, patch);
+            	statsDisplay.setColour(Color.WHITE);
                 new UIStats(x + width/2, (y + height - 266), width/2, party.getMember(playerSelected)).render(batch, patch);
             }
             if (menuSelected == 1) {
-                new UIMessageBox("STATS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2, (y + height + 4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("SKILLS", Assets.consolas22, Color.WHITE, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("EQUIPMENT", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10).render(batch, patch);
+            	skillsDisplay.setColour(Color.WHITE);
                 for (int i=0;i<party.getMember(playerSelected).getSkills().size();i++) {
                     new UISkill(x + width/2, (y + height - 86)-(90*i), width/2, Game.skills.getSkill(party.getMember(playerSelected).getSkills().get(i))).render(batch, patch);
                 }
             }
             if (menuSelected == 2) {
-                new UIMessageBox("STATS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2, (y + height + 4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("SKILLS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10).render(batch, patch);
-                new UIMessageBox("EQUIPMENT", Assets.consolas22, Color.WHITE, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10).render(batch, patch);
+            	equipmentDisplay.setColour(Color.WHITE);
             }
+            
+            statsDisplay.render(batch, patch);
+            skillsDisplay.render(batch, patch);
+            equipmentDisplay.render(batch, patch);
 
         }
     }

@@ -93,4 +93,8 @@ public class UIMessageBox extends UIComponent {
     public void setMessage(String message) {
         this.message = message;
     }
+    
+    public void setColour(Color colour){
+    	this.color = colour;
+    }
 }
