@@ -172,7 +172,7 @@ public class BattleScreen extends ScreenAdapter {
     public int getTarget(Agent.AgentType typeToGet){
         Random random = new Random();
         int index = random.nextInt(turnOrder.size());
-        if(turnOrder.get(index).type!=typeToGet)
+        if(turnOrder.get(index).type!=typeToGet || turnOrder.get(index).isDead())
             return getTarget(typeToGet);
         else
             return index;

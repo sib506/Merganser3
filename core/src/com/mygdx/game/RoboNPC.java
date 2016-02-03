@@ -36,9 +36,10 @@ public class RoboNPC extends NPC {
     public void action(GameWorld gameWorld) {
         Assets.sfx_battleStart.play(Game.masterVolume);
         uiManager.addNotification("You defeated Roboduck! You got 100 points!");
-        Game.objectivesComplete += 1;
-        Game.objectives[1] = true;
-        Game.pointsScore += 100;
+        gameWorld.game.objectiveManager.completeObjective(1, 100);
+//        Game.objectivesComplete += 1;
+//        Game.objectives[1] = true;
+//        Game.pointsScore += 100;
         BattleParameters params = new BattleParameters(0);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();

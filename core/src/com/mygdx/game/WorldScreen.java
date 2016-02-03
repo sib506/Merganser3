@@ -50,6 +50,7 @@ public class WorldScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         update(delta);
+        game.objectiveManager.checkObjectives();
         worldRenderer.render();
     }
 
@@ -61,6 +62,10 @@ public class WorldScreen extends ScreenAdapter {
     @Override
     public void dispose() {
         worldRenderer.dispose();
+    }
+    
+    public GameWorld getGameWorld(){
+    	return gameWorld;
     }
 }
 

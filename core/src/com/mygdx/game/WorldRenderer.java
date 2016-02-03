@@ -61,7 +61,7 @@ public class WorldRenderer {
 
         mapRenderer.setView(camera);
         mapRenderer.render();
-
+        
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         renderPlayers();
