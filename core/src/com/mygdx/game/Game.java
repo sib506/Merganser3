@@ -21,6 +21,20 @@ public class Game extends com.badlogic.gdx.Game {
 	public static SkillManager skills;
 	private static JsonLoader jsonLoader = new JsonLoader();
 	public static int pointsScore=0;
+	public static int objectivesComplete=0;
+	public static int battlesWon=0;
+	public static boolean objectives[] = {false, false, false, false, false, false, false, false};
+	/* 0:Talk to Sally
+	 * 1:Defeat Roboduck
+	 * 2:Win 10 battles
+	 * 3:Reach 200 points
+	 * 3:Talk to ???
+	 * 4:Defeat ???
+	 * 5:Win 20 battles
+	 * 6:Reach 400 points
+	 * 7:Defeat ???
+	 */
+	
 
 	public static float masterVolume = 0.1f;
 
