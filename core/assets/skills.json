@@ -8,7 +8,7 @@
 	"MPCost":3
 	},
 	{
-	"ID":1,
+	"ID":3,
 	"name":"Cure light wounds",
 	"description":"Cures basic wounds",
 	"skillType":"HEAL",
@@ -16,7 +16,7 @@
 	"MPCost":3
 	},
 	{
-	"ID":2,
+	"ID":1,
 	"name":"Flames",
 	"description":"Burns things",
 	"skillType":"MAGIC",
@@ -24,7 +24,7 @@
 	"MPCost":3
 	},
 	{
-	"ID":3,
+	"ID":2,
 	"name":"Cold",
 	"description":"Refrigerates things",
 	"skillType":"MAGIC",
