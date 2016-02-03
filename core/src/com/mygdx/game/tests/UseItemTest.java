@@ -50,7 +50,7 @@ public class UseItemTest extends TestCase {
 //		doNothing().when(mockAssets.sfx_healNoise).play();
 //		doThrow(new RuntimeException()).when(mockBattleMenu).createInfoBox(testAgent1.getName() + " is healed for " + testConsumable.getPower()
 //        + " health",3);
-		int getDuck
+//		int getDuck
 		testUseItem.movementDone(0);
 		assertTrue(true);
 	}

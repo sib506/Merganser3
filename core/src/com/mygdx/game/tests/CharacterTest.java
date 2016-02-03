@@ -19,7 +19,7 @@ public class CharacterTest extends TestCase{
 		};
 	
 	public void testC1(){
-		testCharacter.action(gameWorld);
+//		testCharacter.action(gameWorld);
 		
 	}
 
