@@ -43,8 +43,10 @@ public class SallyNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         if (!doneInteraction) {
-            uiManager.addNotification("You gained 40 points.");
+            uiManager.addNotification("You talked to Sally! You got 40 points!");
             Game.pointsScore += 40;
+            Game.objectivesComplete += 1;
+            Game.objectives[0] = true;
             doneInteraction = true;
         }
     }
