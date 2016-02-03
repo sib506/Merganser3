@@ -115,6 +115,18 @@ public class GameWorld {
             case BATTLE:
                 if (game.wonBattle) {
                     uiManager.addNotification("You won the battle!");
+                    Game.battlesWon += 1;
+                    if (Game.battlesWon == 10){
+                    	Game.objectives[2] = true;
+                    	Game.objectivesComplete += 1;
+                    	Game.pointsScore += 50;
+                    	uiManager.addNotification("You won 10 battles! You got 50 points!");
+                    } else if(Game.battlesWon == 20){
+                    	Game.objectives[5] = true;
+                    	Game.objectivesComplete += 1;
+                    	Game.pointsScore += 50;
+                    	uiManager.addNotification("You won 20 battles! You got 50 points!");
+                    }
                 } else {
 //                    Game.party.setHealths(1);
 //                    level.player.setCurrentTile(new Vector2(118, 94));
