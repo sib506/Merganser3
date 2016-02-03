@@ -26,6 +26,8 @@ public class Game extends com.badlogic.gdx.Game {
 
 	private WorldScreen worldScreen;
 	private BattleScreen battleScreen;
+	private EndScreen gameOverScreen;
+	private WinScreen gameWinScreen;
 
 	public boolean wonBattle;
 
@@ -88,5 +90,23 @@ public class Game extends com.badlogic.gdx.Game {
 	public void newWorldScreen() {
 		worldScreen = new WorldScreen(this);
 		setScreen(worldScreen);
+	}
+	
+	/**
+	 * NEW METHOD: Switches from the current screen to the GameOver Screen
+	 */
+	public void newGameOverScreen(){
+		gameOverScreen = new EndScreen(this);
+		setScreen(gameOverScreen);
+		
+	}
+	
+	/**
+	 * NEW METHOD: Switches from the current screen to the Game Win Screen
+	 */
+	public void newWinScreen(){
+		gameWinScreen = new WinScreen(this);
+		setScreen(gameWinScreen);
+		
 	}
 }
