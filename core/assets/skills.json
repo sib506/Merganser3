@@ -128,12 +128,20 @@
 	"MPCost":10
 	},
 	{
-	"ID":16
+	"ID":16,
 	"name":"Cure serious wounds",
 	"description":"Hey, that tickles",
 	"skillType":"HEAL",
 	"basePower":75,
 	"MPCost":10
+	},
+	{
+	"ID":17,
+	"name":"Attack",
+	"description":"Hit summat",
+	"skillType":"MAGIC",
+	"basePower":2,
+	"MPCost":0
 	}
 	]
 }
