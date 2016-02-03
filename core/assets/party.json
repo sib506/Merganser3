@@ -1,6 +1,6 @@
 {
 "partyList":[{
-	"name":"Tom the Duck",
+	"name":"Electro-duck",
 	"type":"FRIENDLY",
 	"stats":{
 		"currentHP":100,
@@ -17,13 +17,13 @@
 		"currentLevel":2,
 		"maxLevel":20
 		},
-	"skills":[0, 1, 2, 3],
+	"skills":[17, 0],
 	"equipment":{
 		"equipSlots":[1,0,0,0,0]
 		}
 	},
 	{
-	"name":"Ryan the Duck",
+	"name":"Pyro-duck",
 	"type":"FRIENDLY",
 	"stats":{
 		"currentHP":100,
@@ -40,13 +40,13 @@
 		"currentLevel":2,
 		"maxLevel":20
 		},
-	"skills":[3, 1],
+	"skills":[17, 1],
 	"equipment":{
 		"equipSlots":[1,0,0,0,0]
 		}
 	},
 	{
-	"name":"Adrian the Duck",
+	"name":"Cryo-duck",
 	"type":"FRIENDLY",
 	"stats":{
 		"currentHP":100,
@@ -63,13 +63,13 @@
 		"currentLevel":2,
 		"maxLevel":20
 		},
-	"skills":[2, 1],
+	"skills":[17, 2],
 	"equipment":{
 		"equipSlots":[0,0,0,0,0]
 		}
 	},
 	{
-	"name":"Ahn the Duck",
+	"name":"Medic duck",
 	"type":"FRIENDLY",
 	"stats":{
 		"currentHP":100,
@@ -86,7 +86,7 @@
 		"currentLevel":2,
 		"maxLevel":20
 		},
-	"skills":[0, 1],
+	"skills":[17, 3],
 	"equipment":{
 		"equipSlots":[0,0,0,0,0]
 		}
