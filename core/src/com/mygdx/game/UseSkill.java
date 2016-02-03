@@ -81,8 +81,9 @@ public class UseSkill extends UseAbility {
                 }
                 case MAGIC: {
                     Assets.sfx_hitNoise.play(Game.masterVolume);
-                    target.dealDamage(user.getStats().getIntelligence() + user.getCurrentEquipment().getTotalIntelligenceModifiers() + skill.getBasePower());
-                    String infoBoxText = (target.getName() + " takes "+(user.getStats().getIntelligence() + user.getCurrentEquipment().getTotalIntelligenceModifiers() + skill.getBasePower()) + " damage");
+                    int damage = user.getStats().getIntelligence() + user.getCurrentEquipment().getTotalIntelligenceModifiers() + skill.getBasePower();
+                    target.dealDamage(damage);
+                    String infoBoxText = (target.getName() + " takes "+(damage) + " damage");
                     if(target.isDead())
                         infoBoxText+=" and is defeated.";
                     battleMenu.createInfoBox( infoBoxText, 3);
