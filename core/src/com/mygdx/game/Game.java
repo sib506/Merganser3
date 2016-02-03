@@ -28,7 +28,6 @@ public class Game extends com.badlogic.gdx.Game {
 	 * 1:Defeat Roboduck
 	 * 2:Win 10 battles
 	 * 3:Reach 200 points
-	 * 3:Talk to ???
 	 * 4:Defeat ???
 	 * 5:Win 20 battles
 	 * 6:Reach 400 points
