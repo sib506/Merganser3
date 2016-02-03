@@ -116,9 +116,10 @@ public class GameWorld {
                 if (game.wonBattle) {
                     uiManager.addNotification("You won the battle!");
                 } else {
-                    Game.party.setHealths(1);
-                    level.player.setCurrentTile(new Vector2(118, 94));
+//                    Game.party.setHealths(1);
+//                    level.player.setCurrentTile(new Vector2(118, 94));
                     uiManager.addNotification("You lost the battle! You have been moved backwards.");
+                    game.newGameOverScreen();
                 }
                 gameState = GameState.FREEROAM;
                 break;
