@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class UIManager {
     public UIPartyMenu partyMenu;
+    public UIObjectives objectives;
     public List<UIMessageBox> notifications;
 
     private List<UIComponent> uiComponents;
@@ -28,6 +29,7 @@ public class UIManager {
         notificationTimer = 0;
         uiComponents = new ArrayList<UIComponent>();
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
+        objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320);
     }
 
     /**
@@ -43,6 +45,21 @@ public class UIManager {
      */
     public boolean updatePartyMenu(float delta) {
         return partyMenu.update(delta);
+    }
+    
+    /**
+     * Opens the objectives menu.
+     */
+    public void openObjectiveMenu() {
+        objectives.show();
+    }
+
+    /**
+     * Called once per frame to update the party menu.
+     * @return false if the party menu is closed.
+     */
+    public boolean updateObjectiveMenu(float delta) {
+        return objectives.update(delta);
     }
 
     /**

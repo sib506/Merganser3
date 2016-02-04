@@ -97,10 +97,28 @@ public class GameWorld {
                         gameState = GameState.PARTY_MENU;
                     }
                 }
+                else
+                    if (InputHandler.isOJustPressed()) {
+                        interactingNPC = level.player.interactingNPC;
+                        level.stopInput = true;
+                        if (interactingNPC != null) {
+                            interactingNPC.initializeInteraction(delta, uiManager);
+                            gameState = GameState.INTERACTION;
+                        } else {
+                            uiManager.openObjectiveMenu();
+                            gameState = GameState.OBJECTIVE_MENU;
+                        }
+                    }
                 break;
 
             case PARTY_MENU:
                 if (!uiManager.updatePartyMenu(delta)){
+                    gameState = GameState.FREEROAM;
+                }
+                break;
+                
+            case OBJECTIVE_MENU:
+                if (!uiManager.updateObjectiveMenu(delta)){
                     gameState = GameState.FREEROAM;
                 }
                 break;
