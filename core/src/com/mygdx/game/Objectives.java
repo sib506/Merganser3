@@ -7,7 +7,7 @@ public class Objectives {
 	public static boolean objectives[] = { false, false, false, false, false, false, false, false };
 	/*
 	 * 0:Talk to Sally 1:Defeat Roboduck 2:Win 10 battles 3:Reach 200 points
-	 * 4:Defeat ??? 5:Win 20 battles 6:Reach 400 points 7:Defeat ???
+	 * 4:Defeat The EVIL duck 5:Win 20 battles 6:Reach 400 points 7:Defeat ???
 	 */
 
 	public static int objectivesComplete = 0;

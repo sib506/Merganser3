@@ -8,17 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represents the robot boss of the game.
+ * This class represents the vampire boss of the game.
  */
-public class RoboNPC extends NPC {
+public class EvilNPC extends NPC {
 
     private String[] messages;
 
-    public RoboNPC(Level level, Vector2 currentTile) {
+    public EvilNPC(Level level, Vector2 currentTile) {
         super(level, currentTile);
-        messages = new String[2];
-        messages[0] = "01010000 01001100 01000101 01000001 01010011 01000101 00100000 01001000 01000101 01001100 01010000 00100000 01001101 01000101 00001101 00001010!!!";
-        messages[1] = "Robo duck has challenged you to a battle.";
+        messages = new String[3];
+        messages[0] = "I have a doctorate, you know.";
+        messages[1] = "I did important research.";
+        messages[2] = "Why are you still bothering me?";
     }
 
     @Override
@@ -35,18 +36,19 @@ public class RoboNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         Assets.sfx_battleStart.play(Game.masterVolume);
-        uiManager.addNotification("You defeated Roboduck! You got 100 points!");
-        gameWorld.game.objectiveManager.completeObjective(1, 100);
+        uiManager.addNotification("'Tell my students... Their lectures are available online...'");
+        uiManager.addNotification("You defeated the EVIL duck! You got 150 points!");
+        gameWorld.game.objectiveManager.completeObjective(4, 150);
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
         BattleParameters params = new BattleParameters(0);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
-        Agent enemyDuck = new Agent("Robo Duck", Agent.AgentType.ENEMY,new Statistics(180,300,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
+        Agent enemyDuck = new Agent("Dr. Von Duck", Agent.AgentType.ENEMY,new Statistics(300,500,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
 //        enemyDuck.equipEquipment(0);
 //        enemyDuck.equipEquipment(1);
-        enemyDuck.addSkill(4);
+        enemyDuck.addSkill(18);
 
         params.addEnemy(enemyDuck);
 
