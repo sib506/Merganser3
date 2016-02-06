@@ -44,7 +44,9 @@ public class SallyNPC extends NPC {
     public void action(GameWorld gameWorld) {
         if (!doneInteraction) {
             uiManager.addNotification("You talked to Sally! You got 40 points!");
-            gameWorld.game.objectiveManager.completeObjective(0, 40);
+            gameWorld.game.objectiveManager.completeObjective("Sally");
+            gameWorld.game.objectiveManager.gameObjectives.remove("Sally");
+            gameWorld.game.objectiveManager.addObjective("RoboDuck", new Objective("Defeat RoboDuck by the Catalyst", 100, "100 Points", false));
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
 //            Game.objectives[0] = true;

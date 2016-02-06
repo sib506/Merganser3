@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Assets;
 import com.mygdx.game.InputHandler;
+import com.mygdx.game.ObjectiveManager;
 import com.mygdx.game.PartyManager;
 
 import java.util.ArrayList;
@@ -24,12 +25,12 @@ public class UIManager {
     public UIDialogue dialogue;
     private float notificationTimer;
 
-    public UIManager(PartyManager party) {
+    public UIManager(PartyManager party, ObjectiveManager obj) {
         notifications = new ArrayList<UIMessageBox>();
         notificationTimer = 0;
         uiComponents = new ArrayList<UIComponent>();
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
-        objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320);
+        objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, obj);
     }
 
     /**

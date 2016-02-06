@@ -38,7 +38,7 @@ public class EvilNPC extends NPC {
         Assets.sfx_battleStart.play(Game.masterVolume);
         uiManager.addNotification("'Tell my students... Their lectures are available online...'");
         uiManager.addNotification("You defeated the EVIL duck! You got 150 points!");
-        gameWorld.game.objectiveManager.completeObjective(4, 150);
+//        gameWorld.game.objectiveManager.completeObjective(4, 150);
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;

@@ -31,7 +31,7 @@ public class GameWorld {
         this.game = game;
         gameState = GameState.FREEROAM;
         level = new Level(this);
-        uiManager = new UIManager(Game.party);
+        uiManager = new UIManager(Game.party, game.objectiveManager);
         battleChance = 2000;
         level.characters.add(new SallyNPC(level, new Vector2(108, 91)));
         level.characters.add(new RoboNPC(level, new Vector2(75, 98)));

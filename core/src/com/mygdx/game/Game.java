@@ -20,7 +20,7 @@ public class Game extends com.badlogic.gdx.Game {
 	private static JsonLoader jsonLoader = new JsonLoader();
 	
 	public static int pointsScore=0;
-	public Objectives objectiveManager = new Objectives(this);
+	public ObjectiveManager objectiveManager = new ObjectiveManager(this);
 
 	public static float masterVolume = 0.1f;
 
