@@ -2,10 +2,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.UI.UIManager;
-import com.mygdx.game.battle.BattleParameters;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class represents the first npc of the game.

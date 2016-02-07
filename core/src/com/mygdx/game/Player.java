@@ -1,6 +1,5 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.math.Vector2;
 
 /**

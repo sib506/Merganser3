@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 import com.mygdx.game.Agent;
 import com.mygdx.game.Agent.AgentType;
-import com.mygdx.game.Equipable.equipType;
-import com.mygdx.game.Game;
 import com.mygdx.game.CurrentEquipment;
 import com.mygdx.game.Equipable;
+import com.mygdx.game.Equipable.equipType;
 import com.mygdx.game.Statistics;
 
 import junit.framework.TestCase;

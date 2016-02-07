@@ -1,15 +1,14 @@
 package com.mygdx.game.UI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Assets;
-import com.mygdx.game.InputHandler;
 import com.mygdx.game.ObjectiveManager;
 import com.mygdx.game.PartyManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class is responsible for the creation of UI elements on the screen.

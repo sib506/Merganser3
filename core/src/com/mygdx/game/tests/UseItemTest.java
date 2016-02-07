@@ -1,17 +1,11 @@
 package com.mygdx.game.tests;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doThrow;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.mygdx.game.Agent;
 import com.mygdx.game.Agent.AgentType;
-import com.mygdx.game.Assets;
 import com.mygdx.game.Consumable;
 import com.mygdx.game.CurrentEquipment;
 import com.mygdx.game.Game;
@@ -34,9 +28,9 @@ public class UseItemTest extends TestCase {
 	Consumable testConsumable = new Consumable("testCon", "test", Consumable.consumeType.HEAL, 5);
 
 	public void setUp() {
-		game.items = new ItemManager();
-		game.items.addConsumable(testConsumable);
-		System.out.println(game.items.toString());
+		Game.items = new ItemManager();
+		Game.items.addConsumable(testConsumable);
+		System.out.println(Game.items.toString());
 		testAgent1 = new Agent("testAgent1", AgentType.FRIENDLY, new Statistics(10, 10, 20, 10, 10, 10, 10, 3, 1),
 				new ArrayList<Integer>(), new CurrentEquipment(), 1);
 		testAgent2 = new Agent("testAgent2", AgentType.FRIENDLY, new Statistics(10, 10, 10, 10, 10, 10, 10, 3, 1),

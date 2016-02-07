@@ -15,7 +15,6 @@ import com.badlogic.gdx.utils.Align;
  */
 public class WinScreen extends ScreenAdapter {
 
-    private final Game game;
     private float fadeInCounter;
     private float runningTime;
     private final String END_MESSAGE;
@@ -24,8 +23,7 @@ public class WinScreen extends ScreenAdapter {
     private SpriteBatch batch = new SpriteBatch();
 
     public WinScreen (Game game){
-        this.game = game;
-        this.END_SCORE = game.pointsScore;
+        this.END_SCORE = Game.pointsScore;
         this.END_MESSAGE = "CONGRATULATIONS.HESLINGTON IS SAFE!\nYOUR SCORE: " + END_SCORE;
         this.QUIT_MESSAGE = "PRESS E TO EXIT";
     }

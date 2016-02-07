@@ -29,7 +29,7 @@ public class WorldRenderer {
 
     private Vector2 textureOffset = new Vector2(-2, 0);
 
-    private float stateTime = 0;
+    //private float stateTime = 0;
 
     /**
      * @param world required to access state of the game e.g.

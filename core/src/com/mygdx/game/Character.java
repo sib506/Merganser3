@@ -1,11 +1,10 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.assets.loaders.SynchronousAssetLoader;
-import com.badlogic.gdx.math.Vector2;
+import static com.mygdx.game.Level.TILE_SIZE;
 
 import java.util.Comparator;
 
-import static com.mygdx.game.Level.TILE_SIZE;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * This abstract class represents a character in the Level.

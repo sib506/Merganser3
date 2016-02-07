@@ -1,12 +1,12 @@
 package com.mygdx.game;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
-
-import java.util.ArrayList;
 
 /**
  * The level class contains the map used by the game and stores all characters.
@@ -15,7 +15,6 @@ public class Level {
 
     public static final int TILE_SIZE = 16;
 
-    private GameWorld gameWorld;
     public TiledMap map;
     public boolean[][] collisionMap;
     public Player player;
@@ -32,7 +31,6 @@ public class Level {
      * The constructor loads the map and creates a new player in the appropriate position.
      */
     public Level(GameWorld gameWorld) {
-        this.gameWorld = gameWorld;
         map = new TmxMapLoader().load("newMap.tmx");
 
         MapProperties prop = map.getProperties();

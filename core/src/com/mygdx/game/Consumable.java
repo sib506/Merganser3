@@ -1,8 +1,5 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.utils.Json;
-import com.badlogic.gdx.utils.JsonValue;
-
 public class Consumable{
 
     private int ID = -1;
