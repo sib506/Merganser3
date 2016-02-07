@@ -4,51 +4,52 @@
   <image source="SpriteSheetPlaceHolders.png" width="256" height="256"/>
   <tile id="40">
    <properties>
-    <property name="Computer Science" value=""/>
+    <property name="Location" value="Computer Science"/>
    </properties>
   </tile>
   <tile id="41">
    <properties>
-    <property name="Theatre Film &amp; Television" value=""/>
+    <property name="Location" value="Theatre Film &amp; Television"/>
    </properties>
   </tile>
   <tile id="42">
    <properties>
-    <property name="The Catalyst" value=""/>
+    <property name="Location" value="The Catalyst"/>
    </properties>
   </tile>
   <tile id="43">
    <properties>
-    <property name="Law &amp; Management School" value=""/>
+    <property name="Location" value="Law &amp; Management School"/>
    </properties>
   </tile>
   <tile id="44">
    <properties>
-    <property name="Ron Cooke Hub" value=""/>
+    <property name="Location" value="Ron Cooke Hub"/>
    </properties>
   </tile>
   <tile id="45">
    <properties>
-    <property name="Goodricke College" value=""/>
+    <property name="Location" value="Goodricke College"/>
    </properties>
   </tile>
   <tile id="46">
    <properties>
-    <property name="Langwith College" value=""/>
+    <property name="Location" value="Langwith College"/>
    </properties>
   </tile>
   <tile id="47">
    <properties>
-    <property name="Constantine College" value=""/>
+    <property name="Location" value="Constantine College"/>
    </properties>
   </tile>
   <tile id="49">
    <properties>
-    <property name="Sport Centre" value=""/>
+    <property name="Location" value="Sport Centre"/>
    </properties>
   </tile>
   <tile id="64">
    <properties>
+    <property name="Location" value="The Lake"/>
     <property name="WaterFrame" value="1"/>
    </properties>
   </tile>

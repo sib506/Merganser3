@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import static com.mygdx.game.Level.TILE_SIZE;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 import com.badlogic.gdx.math.Vector2;
@@ -62,6 +63,7 @@ public abstract class Character {
      * @param delta The time since the last frame was rendered.
      */
     public void update(float delta) {
+    	Game.currentLocation = level.locationMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
         if (level.stopInput){
 
         } else if (getState() == CharacterState.STATIONARY) {
@@ -71,6 +73,7 @@ public abstract class Character {
         } else {
             updateTransitioning(delta);
         }
+        
     }
 
     /**

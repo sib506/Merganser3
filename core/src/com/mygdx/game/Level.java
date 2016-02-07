@@ -17,6 +17,7 @@ public class Level {
 
     public TiledMap map;
     public boolean[][] collisionMap;
+    public String[][] locationMap;
     public Player player;
     public ArrayList<Character> characters;
     public boolean stopInput;
@@ -47,6 +48,20 @@ public class Level {
                 collisionMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("blocked");
             }
         }
+        
+        locationMap = new String[mapWidth][mapHeight];
+        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = mapHeight - 1; y >= 0; y--) {
+            	MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
+            	if(mapLocationProperties.containsKey("Location")){
+            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+            	}
+            	else{
+            		locationMap[x][y] = "Somewhere on Hes-West";
+            	}
+            }
+        }
 
         player = new Player(this, new Vector2(115, 94));
         characters = new ArrayList<Character>();
@@ -60,6 +75,7 @@ public class Level {
     public void update(float delta) {
         characters.sort(new Character.CharacterComparator());
         updateCollisionMap();
+        updateLocationMap();
         for (int i = 0; i < characters.size(); i++) {
             characters.get(i).update(delta);
         }
@@ -88,6 +104,23 @@ public class Level {
         collisionMap[(int) player.getCurrentTile().x][(int) player.getCurrentTile().y] = true;
     }
 
+    
+    private void updateLocationMap(){
+        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = mapHeight - 1; y >= 0; y--) {
+            	MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
+            	if(mapLocationProperties.containsKey("Location")){
+            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+            	}
+            	else{
+            		locationMap[x][y] = "Somewhere on Hes-West";
+            	}
+            }
+        }
+    }
+    
+    
     /**
      * @return Returns null if no character exists at x, y.
      */

@@ -13,8 +13,8 @@
 		"intelligence":3,
 		"baseArmourVal":2,
 		"armourVal":2,
-		"experience":205,
-		"currentLevel":2,
+		"experience":2,
+		"currentLevel":1,
 		"maxLevel":20
 		},
 	"skills":[17, 0],
@@ -37,7 +37,7 @@
 		"baseArmourVal":2,
 		"armourVal":2,
 		"experience":2,
-		"currentLevel":2,
+		"currentLevel":1,
 		"maxLevel":20
 		},
 	"skills":[17, 1],
@@ -60,7 +60,7 @@
 		"baseArmourVal":2,
 		"armourVal":2,
 		"experience":2,
-		"currentLevel":2,
+		"currentLevel":1,
 		"maxLevel":20
 		},
 	"skills":[17, 2],
@@ -83,7 +83,7 @@
 		"baseArmourVal":2,
 		"armourVal":2,
 		"experience":2,
-		"currentLevel":2,
+		"currentLevel":1,
 		"maxLevel":20
 		},
 	"skills":[17, 3],

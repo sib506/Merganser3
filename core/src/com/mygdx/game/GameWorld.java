@@ -1,13 +1,14 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.UI.UIManager;
-import com.mygdx.game.UI.UIScore;
-import com.mygdx.game.battle.BattleParameters;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.UI.UICurrentLocation;
+import com.mygdx.game.UI.UIManager;
+import com.mygdx.game.UI.UIScore;
+import com.mygdx.game.battle.BattleParameters;
 
 /**
  * This class contains the high level logic for the game world and contains the level and UI objects.
@@ -36,6 +37,7 @@ public class GameWorld {
         level.characters.add(new SallyNPC(level, new Vector2(108, 91)));
         level.characters.add(new RoboNPC(level, new Vector2(75, 98)));
         uiManager.addUIComponent(new UIScore());
+        uiManager.addUIComponent(new UICurrentLocation());
         battleParams = new BattleParameters(0);
         List<Integer> emptyList = new ArrayList<Integer>();
         Agent enemyDuck = new Agent("Crazed Duck", Agent.AgentType.ENEMY,new Statistics(100,100,0,2,2,2,2,2,3),emptyList,new CurrentEquipment(0,0,0,0,0),0);
