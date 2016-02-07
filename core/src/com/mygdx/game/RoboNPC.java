@@ -35,8 +35,14 @@ public class RoboNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         Assets.sfx_battleStart.play(Game.masterVolume);
-        uiManager.addNotification("You defeated Roboduck! You got 100 points!");
-        gameWorld.game.objectiveManager.completeObjective("RoboDuck");
+        
+        if(gameWorld.game.objectiveManager.gameObjectives.containsKey("RoboDuck")){
+        	uiManager.addNotification("You defeated Roboduck! You got 100 points!");
+        	gameWorld.game.objectiveManager.completeObjective("RoboDuck");
+        }
+        else{
+        	uiManager.addNotification("You needed to talk to Sally! No points for you!");
+        }
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
