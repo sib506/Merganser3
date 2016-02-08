@@ -1,14 +1,14 @@
 package com.mygdx.game.UI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Assets;
-import com.mygdx.game.InputHandler;
+import com.mygdx.game.ObjectiveManager;
 import com.mygdx.game.PartyManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class is responsible for the creation of UI elements on the screen.
@@ -16,6 +16,8 @@ import java.util.List;
  */
 public class UIManager {
     public UIPartyMenu partyMenu;
+    public UIObjectives objectives;
+    public UIMap map;
     public List<UIMessageBox> notifications;
 
     private List<UIComponent> uiComponents;
@@ -23,11 +25,14 @@ public class UIManager {
     public UIDialogue dialogue;
     private float notificationTimer;
 
-    public UIManager(PartyManager party) {
+    public UIManager(PartyManager party, ObjectiveManager obj) {
         notifications = new ArrayList<UIMessageBox>();
         notificationTimer = 0;
         uiComponents = new ArrayList<UIComponent>();
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
+        objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, obj);
+        map = new UIMap(85, 50, Gdx.graphics.getWidth()-170, Gdx.graphics.getHeight()-165);
+
     }
 
     /**
@@ -43,6 +48,37 @@ public class UIManager {
      */
     public boolean updatePartyMenu(float delta) {
         return partyMenu.update(delta);
+    }
+    
+    /**
+     * Opens the objectives menu.
+     */
+    public void openObjectiveMenu() {
+        objectives.show();
+    }
+
+    /**
+     * Called once per frame to update the objective menu.
+     * @return false if the objective menu is closed.
+     */
+    public boolean updateObjectiveMenu(float delta) {
+        return objectives.update(delta);
+    }
+    
+    /**
+     * Opens the map
+     */
+    public void openMap(){
+    	map.show();
+    }
+    
+    
+    /**
+     * Called once per frame to update the map.
+     * @return false if the map is closed.
+     */
+    public boolean updateMap(float delta){
+    	return map.update(delta);
     }
 
     /**

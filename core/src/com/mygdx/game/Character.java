@@ -1,11 +1,11 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.assets.loaders.SynchronousAssetLoader;
-import com.badlogic.gdx.math.Vector2;
+import static com.mygdx.game.Level.TILE_SIZE;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
-import static com.mygdx.game.Level.TILE_SIZE;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * This abstract class represents a character in the Level.
@@ -13,7 +13,7 @@ import static com.mygdx.game.Level.TILE_SIZE;
  */
 public abstract class Character {
 
-    public final float TRANSITION_SPEED = 0.25f;
+    public float transitionSpeed = 0.25f;
     public final float WAIT_PERIOD = 0.15f;
 
     public static final Vector2 CHARACTER_SIZE = new Vector2(13,21);
@@ -33,6 +33,8 @@ public abstract class Character {
 
     private float stateTime;
     protected float waitTime;
+    
+    protected boolean isSwimming = false;
 
 //  Map information for collision detection.
     protected Level level;
@@ -63,6 +65,7 @@ public abstract class Character {
      * @param delta The time since the last frame was rendered.
      */
     public void update(float delta) {
+    	Game.currentLocation = level.locationMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
         if (level.stopInput){
 
         } else if (getState() == CharacterState.STATIONARY) {
@@ -72,6 +75,7 @@ public abstract class Character {
         } else {
             updateTransitioning(delta);
         }
+        
     }
 
     /**
@@ -96,7 +100,9 @@ public abstract class Character {
      * @param requestedDirection The time since the last frame was rendered.
      */
     protected void updateMovement(Direction requestedDirection) {
-        if (getDirection() == requestedDirection) {
+        isSwimming = level.waterMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
+    	updateSpeed();
+    	if (getDirection() == requestedDirection) {
             switch (requestedDirection) {
                 case UP:
                     if (!level.collisionMap[(int) getCurrentTile().x][(int) getCurrentTile().y + 1]) {
@@ -215,6 +221,25 @@ public abstract class Character {
             else
                 return 1;
         }
+    }
+
+    public boolean isSwimming(){
+    	System.out.println(isSwimming);
+    	return isSwimming;
+    }
+    
+    public boolean isFlying(){
+    	return false;
+    }
+    
+    public void updateSpeed(){
+    	if(isSwimming){
+    		transitionSpeed = 0.1f;
+    	}else if (isFlying()){
+    		transitionSpeed = 0.01f;
+    	}else{
+    		transitionSpeed = 0.25f;
+    	}
     }
 
 }

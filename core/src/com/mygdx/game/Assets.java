@@ -30,6 +30,7 @@ public class Assets {
     public static NinePatch patch;
     public static TextureAtlas atlas;
     public static Texture dialoguePointer;
+    public static Texture worldMap;
 
     private static final int PLAYER_WALKSHEET_COLS = 4;
     private static final int PLAYER_WALKSHEET_ROWS = 2;
@@ -39,7 +40,13 @@ public class Assets {
     //  CHARACTER TEXTURE SHEETS
     public static Animation[] playerWalkAnimation;
     public static Texture playerWalkSheet;
+    
+    public static Animation[] playerSwimAnimation;
+    public static Texture playerSwimSheet;
 
+    public static Animation[] playerFlyAnimation;
+    public static Texture playerFlySheet;
+    
     public static Animation[] SallyNPCWalkAnimation;
     public static Texture SallyNPCWalkSheet;
 
@@ -106,6 +113,7 @@ public class Assets {
         atlas = new TextureAtlas(Gdx.files.internal("packedimages/pack.atlas"));
         patch = atlas.createPatch("knob2");
         dialoguePointer = new Texture("dialoguePointer.png");
+        worldMap = new Texture("campusMap.png");
 
         sfx_menuMove = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuMove.wav"));
         sfx_menuSelect = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuSelect.wav"));
@@ -146,6 +154,47 @@ public class Assets {
             playerWalkAnimation[x] = new Animation(0.175f, walkFrameDirections[x]);
             playerWalkAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
         }
+        
+        // Swimming
+        playerSwimSheet = new Texture("DuckSwimFrames.png");
+        tmp = TextureRegion.split(playerSwimSheet, playerSwimSheet.getWidth() / PLAYER_WALKSHEET_COLS, playerWalkSheet.getHeight() / PLAYER_WALKSHEET_ROWS);
+        TextureRegion[][] swimFrameDirections = new TextureRegion[PLAYER_WALKSHEET_COLS][PLAYER_WALKSHEET_ROWS];
+        index = 0;
+        for (int i = 0; i < PLAYER_WALKSHEET_ROWS; i++) {
+            for (int j = 0; j < PLAYER_WALKSHEET_COLS; j++) {
+                if (j % 2 == 0) {
+                	swimFrameDirections[index][j % 2] = tmp[i][j];
+                } else {
+                	swimFrameDirections[index++][j % 2] = tmp[i][j];
+                }
+            }
+        }
+        playerSwimAnimation = new Animation[PLAYER_WALKSHEET_COLS];
+        for (int x = 0; x < swimFrameDirections.length;x++) {
+            playerSwimAnimation[x] = new Animation(0.175f, swimFrameDirections[x]);
+            playerSwimAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
+        }
+        
+//     // Fly
+//        playerFlySheet = new Texture("DuckAnimationFrames.png");
+//        tmp = TextureRegion.split(playerWalkSheet, playerWalkSheet.getWidth() / PLAYER_WALKSHEET_COLS, playerWalkSheet.getHeight() / PLAYER_WALKSHEET_ROWS);
+//        TextureRegion[][] flyFrameDirections = new TextureRegion[PLAYER_WALKSHEET_COLS][PLAYER_WALKSHEET_ROWS];
+//        index = 0;
+//        for (int i = 0; i < PLAYER_WALKSHEET_ROWS; i++) {
+//            for (int j = 0; j < PLAYER_WALKSHEET_COLS; j++) {
+//                if (j % 2 == 0) {
+//                	swimFrameDirections[index][j % 2] = tmp[i][j];
+//                } else {
+//                	swimFrameDirections[index++][j % 2] = tmp[i][j];
+//                }
+//            }
+//        }
+//        playerSwimAnimation = new Animation[PLAYER_WALKSHEET_COLS];
+//        for (int x = 0; x < swimFrameDirections.length;x++) {
+//            playerSwimAnimation[x] = new Animation(0.175f, swimFrameDirections[x]);
+//            playerSwimAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
+//        }
+        
 
         SallyNPCWalkSheet = new Texture("EvilDuckAnimationFrames.png");
         tmp = TextureRegion.split(SallyNPCWalkSheet, SallyNPCWalkSheet.getWidth() / NPC_WALKSHEET_COLS, SallyNPCWalkSheet.getHeight() / NPC_WALKSHEET_ROWS);
@@ -194,6 +243,7 @@ public class Assets {
         playerTexture.dispose();
         playerTexture.dispose();
         battleTurnPointer.dispose();
+        worldMap.dispose();
         mapTexture.dispose();
         consolas22.dispose();
         atlas.dispose();

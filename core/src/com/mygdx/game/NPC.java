@@ -37,7 +37,7 @@ public abstract class NPC extends Character {
     @Override
     protected void updateTransitioning(float delta) {
         runningTime += delta;
-        float t = runningTime / TRANSITION_SPEED;
+        float t = runningTime / transitionSpeed;
         getAbsPos().set(oldPos.x + (targetPos.x - oldPos.x) * t, oldPos.y + (targetPos.y - oldPos.y) * t);
         if (t >= 1) {
             setState(CharacterState.STATIONARY);

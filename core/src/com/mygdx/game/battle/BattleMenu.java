@@ -39,11 +39,11 @@ public class BattleMenu {
     private float turnIndicatorX = 0, turnIndicatorY =0;//Locations of the turn indicator
     public boolean showTurnIndicator = false;
 
-    private UIManager battleUI = new UIManager(Game.party);//Stores the UI elements
+    private UIManager battleUI = new UIManager(Game.party, null);//Stores the UI elements
     private UIRenderer uiRenderer = new UIRenderer(battleUI);
 
     //Camera offset values
-    private float xOffset=-Gdx.graphics.getWidth();
+    //private float xOffset=-Gdx.graphics.getWidth();
     private float yOffset=-Gdx.graphics.getHeight();
 
     private UIBattleBaseMenu baseMenuList;
@@ -305,6 +305,8 @@ public class BattleMenu {
                     baseMenuPointer+=1;
                 break;
             }
+		default:
+			break;
         }
         ((UIBattleBaseMenu)battleUI.getUIComponent(1)).selectItem(baseMenuPointer); //Moves the selector indicator to the correct menu option
     }
@@ -371,6 +373,8 @@ public class BattleMenu {
                     skillMenuPointer+=2;
                 break;
             }
+		default:
+			break;
         }
         skillUI.selectItem(skillMenuPointer);
 
@@ -413,6 +417,8 @@ public class BattleMenu {
                     itemMenuPointer+=2;
                 break;
             }
+		default:
+			break;
 
         }
        itemUI.selectItem(itemMenuPointer);
@@ -488,6 +494,8 @@ public class BattleMenu {
                     targetMenuPointerRow+=1;
                 break;
             }
+		default:
+			break;
 
         }
 

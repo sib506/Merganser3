@@ -29,7 +29,7 @@ public class WorldRenderer {
 
     private Vector2 textureOffset = new Vector2(-2, 0);
 
-    private float stateTime = 0;
+    //private float stateTime = 0;
 
     /**
      * @param world required to access state of the game e.g.
@@ -83,20 +83,56 @@ public class WorldRenderer {
                 }else{
                     c.setStateTime(c.getStateTime() + Gdx.graphics.getDeltaTime());
                 }
+                
                 batch.draw(Assets.shadow, c.getAbsPos().x - textureOffset.x - 9, c.getAbsPos().y - textureOffset.y - 4);
-                if (c.getDirection() == Player.Direction.DOWN) {
-                    batch.draw(Assets.playerWalkAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                            c.getAbsPos().y - textureOffset.y);
-                } else if (c.getDirection() == Player.Direction.LEFT) {
-                    batch.draw(Assets.playerWalkAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                            c.getAbsPos().y - textureOffset.y);
-                } else if (c.getDirection() == Player.Direction.RIGHT) {
-                    batch.draw(Assets.playerWalkAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                            c.getAbsPos().y - textureOffset.y);
-                } else {
-                    batch.draw(Assets.playerWalkAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                            c.getAbsPos().y - textureOffset.y);
+                
+                if(c.isSwimming()){
+                	if (c.getDirection() == Player.Direction.DOWN) {
+                        batch.draw(Assets.playerSwimAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.LEFT) {
+                        batch.draw(Assets.playerSwimAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.RIGHT) {
+                        batch.draw(Assets.playerSwimAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else {
+                        batch.draw(Assets.playerSwimAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    }
                 }
+                else if (c.isFlying()){
+                	if (c.getDirection() == Player.Direction.DOWN) {
+                        batch.draw(Assets.playerWalkAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.LEFT) {
+                        batch.draw(Assets.playerWalkAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.RIGHT) {
+                        batch.draw(Assets.playerWalkAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else {
+                        batch.draw(Assets.playerWalkAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    }
+                }
+                else{
+                	if (c.getDirection() == Player.Direction.DOWN) {
+                        batch.draw(Assets.playerWalkAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.LEFT) {
+                        batch.draw(Assets.playerWalkAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.RIGHT) {
+                        batch.draw(Assets.playerWalkAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else {
+                        batch.draw(Assets.playerWalkAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    }
+                }
+                
+                
             } else if (c instanceof SallyNPC) {
                 if (c.getState() != Character.CharacterState.TRANSITIONING) {
                     c.setStateTime(0.174f);

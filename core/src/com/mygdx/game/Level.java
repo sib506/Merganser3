@@ -1,12 +1,12 @@
 package com.mygdx.game;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
-
-import java.util.ArrayList;
 
 /**
  * The level class contains the map used by the game and stores all characters.
@@ -15,9 +15,10 @@ public class Level {
 
     public static final int TILE_SIZE = 16;
 
-    private GameWorld gameWorld;
     public TiledMap map;
     public boolean[][] collisionMap;
+    public boolean[][] waterMap;
+    public String[][] locationMap;
     public Player player;
     public ArrayList<Character> characters;
     public boolean stopInput;
@@ -32,7 +33,6 @@ public class Level {
      * The constructor loads the map and creates a new player in the appropriate position.
      */
     public Level(GameWorld gameWorld) {
-        this.gameWorld = gameWorld;
         map = new TmxMapLoader().load("newMap.tmx");
 
         MapProperties prop = map.getProperties();
@@ -43,11 +43,29 @@ public class Level {
         mapBounds = new Vector2(mapWidth * tileWidth, mapHeight * tileHeight);
 
         collisionMap = new boolean[mapWidth][mapHeight];
+        locationMap = new String[mapWidth][mapHeight];
+        waterMap = new boolean[mapWidth][mapHeight];
         TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
+        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
         for (int x = 0; x < mapWidth; x++) {
             for (int y = mapHeight - 1; y >= 0; y--) {
-                collisionMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("blocked");
+                // For collisionMap
+            	collisionMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("blocked");
+                
+            	// For waterMap
+            	waterMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("WaterFrame");
+            	
+                // For current location
+                MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
+            	if(mapLocationProperties.containsKey("Location")){
+            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+            	}
+            	else{
+            		locationMap[x][y] = "Somewhere on Hes-West";
+            	}
             }
+            
+            
         }
 
         player = new Player(this, new Vector2(115, 94));
@@ -62,6 +80,8 @@ public class Level {
     public void update(float delta) {
         characters.sort(new Character.CharacterComparator());
         updateCollisionMap();
+        updateWaterMap();
+        updateLocationMap();
         for (int i = 0; i < characters.size(); i++) {
             characters.get(i).update(delta);
         }
@@ -71,11 +91,6 @@ public class Level {
      * The CollisionMap allows characters to know if their path is blocked by a player or a blocked tile.
      */
     private void updateCollisionMap() {
-        for (int i = 0; i < collisionMap.length; i++) {
-            for (int j = 0; j < collisionMap[i].length; j++) {
-                collisionMap[i][j] = false;
-            }
-        }
         TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
         for (int x = 0; x < mapWidth; x++) {
             for (int y = mapHeight - 1; y >= 0; y--) {
@@ -89,7 +104,36 @@ public class Level {
         collisionMap[(int) player.targetTile.x][(int) player.targetTile.y] = true;
         collisionMap[(int) player.getCurrentTile().x][(int) player.getCurrentTile().y] = true;
     }
+    
+    /**
+     * The CollisionMap allows characters to know if their path is blocked by a player or a blocked tile.
+     */
+    private void updateWaterMap() {
+        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = mapHeight - 1; y >= 0; y--) {
+                waterMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("WaterFrame");
+            }
+        }
+    }
 
+    
+    private void updateLocationMap(){
+        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
+        for (int x = 0; x < mapWidth; x++) {
+            for (int y = mapHeight - 1; y >= 0; y--) {
+            	MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
+            	if(mapLocationProperties.containsKey("Location")){
+            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+            	}
+            	else{
+            		locationMap[x][y] = "Somewhere on Hes-East";
+            	}
+            }
+        }
+    }
+    
+    
     /**
      * @return Returns null if no character exists at x, y.
      */
