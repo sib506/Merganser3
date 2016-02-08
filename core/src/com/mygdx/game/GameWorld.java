@@ -111,6 +111,17 @@ public class GameWorld {
                             gameState = GameState.OBJECTIVE_MENU;
                         }
                     }
+                    else if (InputHandler.isMJustPressed()){
+                    	interactingNPC = level.player.interactingNPC;
+                        level.stopInput = true;
+                        if (interactingNPC != null) {
+                            interactingNPC.initializeInteraction(delta, uiManager);
+                            gameState = GameState.INTERACTION;
+                        } else {
+                            uiManager.openMap();
+                            gameState = GameState.MAP;
+                        }
+                    }
                 break;
 
             case PARTY_MENU:
@@ -125,6 +136,12 @@ public class GameWorld {
                 }
                 break;
 
+            case MAP:
+            	 if (!uiManager.updateMap(delta)){
+                     gameState = GameState.FREEROAM;
+                 }
+                 break;
+                
             case INTERACTION:
                 if (!interactingNPC.updateInteracting(delta)) {
                     interactingNPC.action(this);

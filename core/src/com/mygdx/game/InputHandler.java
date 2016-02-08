@@ -18,6 +18,7 @@ public class InputHandler {
     private static Boolean actPressed = false;
     private static Boolean escPressed = false;
     private static Boolean oPressed = false;
+    private static Boolean mPressed = false;
 
     private static Boolean upJustPressed = false;
     private static Boolean downJustPressed = false;
@@ -26,6 +27,7 @@ public class InputHandler {
     private static Boolean actJustPressed = false;
     private static Boolean escJustPressed = false;
     private static Boolean OJustPressed = false;
+    private static Boolean MJustPressed = false;
 
     private static final int UP = Input.Keys.W;
     private static final int DOWN = Input.Keys.S;
@@ -34,6 +36,7 @@ public class InputHandler {
     private static final int ACT = Input.Keys.E;
     private static final int ESC = Input.Keys.Q;
     private static final int O = Input.Keys.O;
+    private static final int M = Input.Keys.M;
 
     /**
      * Updates and polls to see which inputs are active.
@@ -102,6 +105,15 @@ public class InputHandler {
             if (Gdx.input.isKeyJustPressed(O)) {
                 OJustPressed = true;
             }
+            
+            mPressed = false;
+            MJustPressed = false;
+            if (Gdx.input.isKeyPressed(M)) {
+                mPressed = true;
+            }
+            if (Gdx.input.isKeyJustPressed(M)) {
+                MJustPressed = true;
+            }
         }
     }
 
@@ -154,9 +166,17 @@ public class InputHandler {
     public static Boolean isOJustPressed(){
     	return OJustPressed;
     }
+    
+    public static Boolean isMPressed(){
+    	return mPressed;
+    }
+    
+    public static Boolean isMJustPressed(){
+    	return MJustPressed;
+    }
 
     public enum inputType{
-        UP,DOWN,LEFT,RIGHT,ACT,ESC, O
+        UP,DOWN,LEFT,RIGHT,ACT,ESC, O, M
     }
 
     /**
@@ -171,6 +191,7 @@ public class InputHandler {
         actPressed = false;
         escPressed = false;
         oPressed = false;
+        mPressed = false;
 
         upJustPressed = false;
         downJustPressed = false;
@@ -179,6 +200,7 @@ public class InputHandler {
         actJustPressed = false;
         escJustPressed = false;
         OJustPressed = false;
+        MJustPressed = false;
     }
     public static void enableAllInput(){
         isInputEnabled=true;

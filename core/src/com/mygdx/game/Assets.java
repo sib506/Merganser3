@@ -30,6 +30,7 @@ public class Assets {
     public static NinePatch patch;
     public static TextureAtlas atlas;
     public static Texture dialoguePointer;
+    public static Texture worldMap;
 
     private static final int PLAYER_WALKSHEET_COLS = 4;
     private static final int PLAYER_WALKSHEET_ROWS = 2;
@@ -106,6 +107,7 @@ public class Assets {
         atlas = new TextureAtlas(Gdx.files.internal("packedimages/pack.atlas"));
         patch = atlas.createPatch("knob2");
         dialoguePointer = new Texture("dialoguePointer.png");
+        worldMap = new Texture("campusMap.png");
 
         sfx_menuMove = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuMove.wav"));
         sfx_menuSelect = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuSelect.wav"));
@@ -194,6 +196,7 @@ public class Assets {
         playerTexture.dispose();
         playerTexture.dispose();
         battleTurnPointer.dispose();
+        worldMap.dispose();
         mapTexture.dispose();
         consolas22.dispose();
         atlas.dispose();

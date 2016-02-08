@@ -40,6 +40,7 @@ public class UIRenderer {
         }
         uiManager.partyMenu.render(uiBatch, Assets.patch);
         uiManager.objectives.render(uiBatch, Assets.patch);
+        uiManager.map.render(uiBatch, Assets.patch);
         uiBatch.end();
     }
 

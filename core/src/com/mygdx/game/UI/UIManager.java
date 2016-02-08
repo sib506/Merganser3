@@ -17,6 +17,7 @@ import com.mygdx.game.PartyManager;
 public class UIManager {
     public UIPartyMenu partyMenu;
     public UIObjectives objectives;
+    public UIMap map;
     public List<UIMessageBox> notifications;
 
     private List<UIComponent> uiComponents;
@@ -30,6 +31,8 @@ public class UIManager {
         uiComponents = new ArrayList<UIComponent>();
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
         objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, obj);
+        map = new UIMap(85, 50, Gdx.graphics.getWidth()-170, Gdx.graphics.getHeight()-165);
+
     }
 
     /**
@@ -55,11 +58,27 @@ public class UIManager {
     }
 
     /**
-     * Called once per frame to update the party menu.
-     * @return false if the party menu is closed.
+     * Called once per frame to update the objective menu.
+     * @return false if the objective menu is closed.
      */
     public boolean updateObjectiveMenu(float delta) {
         return objectives.update(delta);
+    }
+    
+    /**
+     * Opens the map
+     */
+    public void openMap(){
+    	map.show();
+    }
+    
+    
+    /**
+     * Called once per frame to update the map.
+     * @return false if the map is closed.
+     */
+    public boolean updateMap(float delta){
+    	return map.update(delta);
     }
 
     /**
