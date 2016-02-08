@@ -59,6 +59,7 @@ public class Level {
                 MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
             	if(mapLocationProperties.containsKey("Location")){
             		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+//            		System.out.println(locationMap[x][y]);
             	}
             	else{
             		locationMap[x][y] = "Somewhere on Hes-West";
@@ -80,8 +81,8 @@ public class Level {
     public void update(float delta) {
         characters.sort(new Character.CharacterComparator());
         updateCollisionMap();
-        updateWaterMap();
-        updateLocationMap();
+//        updateWaterMap();
+//        updateLocationMap();
         for (int i = 0; i < characters.size(); i++) {
             characters.get(i).update(delta);
         }
@@ -105,33 +106,33 @@ public class Level {
         collisionMap[(int) player.getCurrentTile().x][(int) player.getCurrentTile().y] = true;
     }
     
-    /**
-     * The CollisionMap allows characters to know if their path is blocked by a player or a blocked tile.
-     */
-    private void updateWaterMap() {
-        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
-        for (int x = 0; x < mapWidth; x++) {
-            for (int y = mapHeight - 1; y >= 0; y--) {
-                waterMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("WaterFrame");
-            }
-        }
-    }
+//    /**
+//     * The CollisionMap allows characters to know if their path is blocked by a player or a blocked tile.
+//     */
+//    private void updateWaterMap() {
+//        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
+//        for (int x = 0; x < mapWidth; x++) {
+//            for (int y = mapHeight - 1; y >= 0; y--) {
+//                waterMap[x][y] = layer.getCell(x, y).getTile().getProperties().containsKey("WaterFrame");
+//            }
+//        }
+//    }
 
     
-    private void updateLocationMap(){
-        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
-        for (int x = 0; x < mapWidth; x++) {
-            for (int y = mapHeight - 1; y >= 0; y--) {
-            	MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
-            	if(mapLocationProperties.containsKey("Location")){
-            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
-            	}
-            	else{
-            		locationMap[x][y] = "Somewhere on Hes-East";
-            	}
-            }
-        }
-    }
+//    private void updateLocationMap(){
+//        TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
+//        for (int x = 0; x < mapWidth; x++) {
+//            for (int y = mapHeight - 1; y >= 0; y--) {
+//            	MapProperties mapLocationProperties = locationLayer.getCell(x, y).getTile().getProperties();
+//            	if(mapLocationProperties.containsKey("Location")){
+//            		locationMap[x][y] = (String) mapLocationProperties.get("Location");
+//            	}
+//            	else{
+//            		locationMap[x][y] = "Somewhere on Hes-East";
+//            	}
+//            }
+//        }
+//    }
     
     
     /**
