@@ -72,7 +72,7 @@ public class GameWorld {
                     uiManager.createDialogue(new String[] {"You have been stopped by a group of... somethings!"});
                     level.stopInput = true;
                     battleChance = 1000;
-                    BattleParameters params = new BattleParameters(0);
+                    BattleParameters params = new BattleParameters(getBackgroundFromLocation());
 
                     //Get a number of agents from the list of enemies, make new agent instances with their information and setup the next battle
                     for(int i=0;i<random.nextInt(3)+1;i++){
@@ -174,5 +174,26 @@ public class GameWorld {
         game.newBattle(battleParams);
     }
 
+    private int getBackgroundFromLocation(){
+    	switch (Game.currentLocation){
+    	case "The Catalyst":
+    		return 8;
+    	case "Computer Science":
+    		return 0;
+    	case "Theatre Film & Television":
+    		return 7;
+    	case "Goodricke College":
+    		return 9;
+    	case "Ron Cooke Hub":
+    		return 2;
+    	case "The Lake":
+    		return 10;
+    	case "Langwith College":
+    		return 4;
+    	case "Constantine College":
+    		return 5;
+    	}
+    	return 0;
+    }
 
 }

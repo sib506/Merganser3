@@ -21,7 +21,7 @@ public class Assets {
     public static Texture targetingPointer;
 
 //  MAP ASSETS
-    public static Texture[] battleBGs = new Texture[4];
+    public static Texture[] battleBGs = new Texture[11];
     public static Texture mapTexture;
 
 //  UI ASSETS
@@ -104,6 +104,14 @@ public class Assets {
         battleBGs[1] = new Texture("backgrounds/LM_path.png");
         battleBGs[2] = new Texture("backgrounds/RCH_lake.png");
         battleBGs[3] = new Texture("backgrounds/Background_1.png");
+        battleBGs[4] = new Texture("backgrounds/Langwith.jpg");
+        battleBGs[5] = new Texture("backgrounds/Constantine.jpg");
+        battleBGs[6] = new Texture("backgrounds/HesEast.jpg");
+        battleBGs[7] = new Texture("backgrounds/TFTV.jpg");
+        battleBGs[8] = new Texture("backgrounds/Catalyst.jpg");
+        battleBGs[9] = new Texture("backgrounds/Goodricke.jpg");
+        battleBGs[10] = new Texture("backgrounds/Lake.jpg");
+        
 
         mapTexture = new Texture("map.jpg");
 
