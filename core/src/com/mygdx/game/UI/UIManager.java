@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Assets;
+import com.mygdx.game.Level;
 import com.mygdx.game.ObjectiveManager;
 import com.mygdx.game.PartyManager;
 
@@ -21,17 +22,19 @@ public class UIManager {
     public List<UIMessageBox> notifications;
 
     private List<UIComponent> uiComponents;
+    private Level level;
 
     public UIDialogue dialogue;
     private float notificationTimer;
 
-    public UIManager(PartyManager party, ObjectiveManager obj) {
+    public UIManager(PartyManager party, ObjectiveManager obj, Level level) {
         notifications = new ArrayList<UIMessageBox>();
         notificationTimer = 0;
         uiComponents = new ArrayList<UIComponent>();
+        this.level = level;
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
         objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, obj);
-        map = new UIMap(85, 50, Gdx.graphics.getWidth()-170, Gdx.graphics.getHeight()-165);
+        map = new UIMap(85, 50, Gdx.graphics.getWidth()-170, Gdx.graphics.getHeight()-165, level);
 
     }
 

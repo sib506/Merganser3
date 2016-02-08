@@ -39,7 +39,7 @@ public class BattleMenu {
     private float turnIndicatorX = 0, turnIndicatorY =0;//Locations of the turn indicator
     public boolean showTurnIndicator = false;
 
-    private UIManager battleUI = new UIManager(Game.party, null);//Stores the UI elements
+    private UIManager battleUI = new UIManager(Game.party, null, null);//Stores the UI elements
     private UIRenderer uiRenderer = new UIRenderer(battleUI);
 
     //Camera offset values

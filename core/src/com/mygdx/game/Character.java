@@ -66,6 +66,7 @@ public abstract class Character {
      */
     public void update(float delta) {
     	Game.currentLocation = level.locationMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
+//    	System.out.println(Game.currentLocation);
         if (level.stopInput){
 
         } else if (getState() == CharacterState.STATIONARY) {
@@ -224,7 +225,6 @@ public abstract class Character {
     }
 
     public boolean isSwimming(){
-    	System.out.println(isSwimming);
     	return isSwimming;
     }
     

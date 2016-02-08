@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Assets;
 import com.mygdx.game.InputHandler;
+import com.mygdx.game.Level;
 
 /**
  * The party menu allows the user to see information about each party member. It
@@ -18,20 +19,22 @@ public class UIMap extends UIComponent {
 	private boolean show;
 
 	private BitmapFont font;
+	private Level level;
 
 	float paddingX;
 	float paddingY;
 	int i;
 
-	private UIMessageBox map = new UIMessageBox("World Map", Assets.consolas22, Color.WHITE, Align.center,
-			x, (y + height + 4), width, 0, 10);
+	private UIMessageBox map = new UIMessageBox("World Map", Assets.consolas22, Color.WHITE, Align.center, x,
+			(y + height + 4), width, 0, 10);
 
-	public UIMap(float x, float y, float width, float height) {
+	public UIMap(float x, float y, float width, float height, Level level) {
 		super(x, y, width, height);
 		paddingX = 25;
 		paddingY = 70;
 		font = Assets.consolas22;
 		show = false;
+		this.level = level;
 	}
 
 	/**
@@ -46,8 +49,10 @@ public class UIMap extends UIComponent {
 					patch);
 
 			map.render(batch, patch);
-			batch.draw(Assets.worldMap,95,60);
-			
+			batch.draw(Assets.worldMap, 95, 60);
+			batch.draw(Assets.playerTexture,
+					(95 + (level.player.getCurrentTile().x / level.mapWidth) * Assets.worldMap.getWidth()),
+					(60 + (level.player.getCurrentTile().y / level.mapHeight) * Assets.worldMap.getHeight()));
 		}
 	}
 
