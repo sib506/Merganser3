@@ -17,9 +17,9 @@ public class EvilNPC extends NPC {
     public EvilNPC(Level level, Vector2 currentTile) {
         super(level, currentTile);
         messages = new String[3];
-        messages[0] = "I have a doctorate, you know.";
-        messages[1] = "I did important research.";
-        messages[2] = "Why are you still bothering me?";
+        messages[0] = "I AM STRONGER EVEN THAN YOU";
+        messages[1] = "NOTHING CAN STOP ME";
+        messages[2] = "MY CODEBASE IS FLAWLESS";
     }
 
     @Override
@@ -36,8 +36,8 @@ public class EvilNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         Assets.sfx_battleStart.play(Game.masterVolume);
-        uiManager.addNotification("'Tell my students... Their lectures are available online...'");
-        uiManager.addNotification("You defeated the EVIL duck! You got 150 points!");
+        uiManager.addNotification("'ERROR: UNEXPECTED DEFEAT ON LINE 93'");
+        uiManager.addNotification("You defeated the RoboDuck MK II! You got 150 points!");
 //        gameWorld.game.objectiveManager.completeObjective(4, 150);
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
@@ -45,7 +45,7 @@ public class EvilNPC extends NPC {
         BattleParameters params = new BattleParameters(0);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
-        Agent enemyDuck = new Agent("Dr. Von Duck", Agent.AgentType.ENEMY,new Statistics(300,500,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
+        Agent enemyDuck = new Agent("RoboDuck MK II", Agent.AgentType.ENEMY,new Statistics(300,500,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
 //        enemyDuck.equipEquipment(0);
 //        enemyDuck.equipEquipment(1);
         enemyDuck.addSkill(18);
