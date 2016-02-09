@@ -59,15 +59,10 @@ public class Statistics {
     public int increaseXP(int xp){//might need to return things when level up
         int levelIncrease = 0;
         experience+=xp;
-        while(experience>=maxExp) {
-                experience -= maxExp;
-                currentLevel += 1;
-                levelIncrease+=1;
-        }
-        if(levelIncrease>0)
-            return levelIncrease;
-        else
-            return -1;
+        levelIncrease = experience / maxExp; // assumes integer division
+        currentLevel += levelIncrease;
+        experience = experience % maxExp; //removed a while loop
+        return levelIncrease;
     }
 
     //when equipment is changed, this should be called
