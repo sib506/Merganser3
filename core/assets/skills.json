@@ -145,8 +145,8 @@
 	},
 	{
 	"ID":18,
-	"name":"Life drain",
-	"description":"Genuine vampirism",
+	"name":"The Pumping Lemma",
+	"description":"The Horror!",
 	"skillType":"MAGIC",
 	"basePower":32,
 	"MPCost":7
