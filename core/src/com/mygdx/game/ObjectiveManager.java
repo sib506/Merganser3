@@ -101,13 +101,14 @@ public class ObjectiveManager {
 	}
 	
 	public void check3Objective() {
-		if (objectivesComplete == 1 && !complete3) {
+		if (objectivesComplete == 3 && !complete3) {
 			ObjectiveNotification("You have completed 3 objectives. Have some new skills!");
 			gameObjectives.get("3Obj").setComplete(true);
 			Game.party.getMember(0).addSkill(9);
 			Game.party.getMember(1).addSkill(10);
 			Game.party.getMember(2).addSkill(11);
 			Game.party.getMember(3).addSkill(12);
+//			Game.party.
 			complete3 = true;
 		}
 	}

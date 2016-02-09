@@ -40,6 +40,7 @@ public class SallyNPC extends NPC {
     public void action(GameWorld gameWorld) {
         if (!doneInteraction) {
             uiManager.addNotification("You talked to Sally! You got 40 points!");
+            level.characters.add(new RoboNPC(level, new Vector2(75, 98)));
             gameWorld.game.objectiveManager.completeObjective("Sally");
             gameWorld.game.objectiveManager.gameObjectives.remove("Sally");
             gameWorld.game.objectiveManager.addObjective("RoboDuck", new Objective("Defeat RoboDuck by the Catalyst", 100, "100 Points", false));

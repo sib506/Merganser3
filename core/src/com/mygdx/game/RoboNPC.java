@@ -43,6 +43,7 @@ public class RoboNPC extends NPC {
         else{
         	uiManager.addNotification("You needed to talk to Sally! No points for you!");
         }
+        level.characters.add(new EvilNPC(level, new Vector2(149, 70)));
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;

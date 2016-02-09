@@ -35,8 +35,6 @@ public class GameWorld {
         uiManager = new UIManager(Game.party, game.objectiveManager, level);
         battleChance = 2000;
         level.characters.add(new SallyNPC(level, new Vector2(108, 91)));
-        level.characters.add(new RoboNPC(level, new Vector2(75, 98))); //line should be moved to sally's objective
-        level.characters.add(new EvilNPC(level, new Vector2(149, 70))); //line should be moved to roboduck's objective
         uiManager.addUIComponent(new UIScore());
         uiManager.addUIComponent(new UICurrentLocation());
         battleParams = new BattleParameters(0);
