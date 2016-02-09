@@ -353,24 +353,24 @@ public class BattleMenu {
                 battleUI.removeUIComponent(skillUI);//Removes the skillUI component
                 break;
             }
-            case RIGHT:{
-                if(skillMenuPointer%2==0)
-                    skillMenuPointer+=1;
-                break;
-            }
-            case LEFT:{
-                if(skillMenuPointer%2!=0)
+//            case RIGHT:{
+//                if(skillMenuPointer%2==0)
+//                    skillMenuPointer+=1;
+//                break;
+//            }
+//            case LEFT:{
+//                if(skillMenuPointer%2!=0)
+//                    skillMenuPointer-=1;
+//                break;
+//            }
+            case UP:{
+                if(skillMenuPointer!=0)
                     skillMenuPointer-=1;
                 break;
             }
-            case UP:{
-                if(skillMenuPointer!=0 && skillMenuPointer!=1)
-                    skillMenuPointer-=2;
-                break;
-            }
             case DOWN:{
-                if(skillMenuPointer!=skillMenu.size()-1 && skillMenuPointer!= skillMenu.size()-2)
-                    skillMenuPointer+=2;
+                if(skillMenuPointer!=skillMenu.size()-1 )
+                    skillMenuPointer+=1;
                 break;
             }
 		default:
@@ -397,24 +397,15 @@ public class BattleMenu {
                 battleUI.removeUIComponent(itemUI);
                 break;
             }
-            case RIGHT:{
-                if(itemMenuPointer%2==0)
-                    itemMenuPointer+=1;
-                break;
-            }
-            case LEFT:{
-                if(itemMenuPointer%2!=0)
+            //removed left right movement to stop index out of range error
+            case UP:{
+                if(itemMenuPointer!=0 )
                     itemMenuPointer-=1;
                 break;
             }
-            case UP:{
-                if(itemMenuPointer!=0 && itemMenuPointer!=1)
-                    itemMenuPointer-=2;
-                break;
-            }
             case DOWN:{
-                if(itemMenuPointer!=itemMenu.size()-1 && itemMenuPointer!= itemMenu.size()-2)
-                    itemMenuPointer+=2;
+                if(itemMenuPointer!=itemMenu.size()-1)
+                    itemMenuPointer+=1;
                 break;
             }
 		default:
