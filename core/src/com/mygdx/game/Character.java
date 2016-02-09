@@ -5,6 +5,7 @@ import static com.mygdx.game.Level.TILE_SIZE;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -233,14 +234,15 @@ public abstract class Character {
     }
     
     public boolean isFlying(){
-    	return false;
+    	InputHandler.update();
+        return InputHandler.isShiftPressed();
     }
     
     public void updateSpeed(){
-    	if(isSwimming){
-    		transitionSpeed = 0.1f;
-    	}else if (isFlying()){
+    	if(isFlying()){
     		transitionSpeed = 0.01f;
+    	}else if (isSwimming){
+    		transitionSpeed = 0.1f;
     	}else{
     		transitionSpeed = 0.25f;
     	}

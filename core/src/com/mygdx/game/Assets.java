@@ -32,8 +32,8 @@ public class Assets {
     public static Texture dialoguePointer;
     public static Texture worldMap;
 
-    private static final int PLAYER_WALKSHEET_COLS = 4;
-    private static final int PLAYER_WALKSHEET_ROWS = 2;
+    private static final int PLAYER_SHEET_COLS = 4;
+    private static final int PLAYER_SHEET_ROWS = 2;
     private static final int NPC_WALKSHEET_COLS = 4;
     private static final int NPC_WALKSHEET_ROWS = 2;
 
@@ -145,11 +145,11 @@ public class Assets {
         shadow = new Texture("shadow.png");
 
         playerWalkSheet = new Texture("DuckAnimationFrames.png");
-        TextureRegion[][] tmp = TextureRegion.split(playerWalkSheet, playerWalkSheet.getWidth() / PLAYER_WALKSHEET_COLS, playerWalkSheet.getHeight() / PLAYER_WALKSHEET_ROWS);
-        TextureRegion[][] walkFrameDirections = new TextureRegion[PLAYER_WALKSHEET_COLS][PLAYER_WALKSHEET_ROWS];
+        TextureRegion[][] tmp = TextureRegion.split(playerWalkSheet, playerWalkSheet.getWidth() / PLAYER_SHEET_COLS, playerWalkSheet.getHeight() / PLAYER_SHEET_ROWS);
+        TextureRegion[][] walkFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
         int index = 0;
-        for (int i = 0; i < PLAYER_WALKSHEET_ROWS; i++) {
-            for (int j = 0; j < PLAYER_WALKSHEET_COLS; j++) {
+        for (int i = 0; i < PLAYER_SHEET_ROWS; i++) {
+            for (int j = 0; j < PLAYER_SHEET_COLS; j++) {
                 if (j % 2 == 0) {
                     walkFrameDirections[index][j % 2] = tmp[i][j];
                 } else {
@@ -157,7 +157,7 @@ public class Assets {
                 }
             }
         }
-        playerWalkAnimation = new Animation[PLAYER_WALKSHEET_COLS];
+        playerWalkAnimation = new Animation[PLAYER_SHEET_COLS];
         for (int x = 0; x < walkFrameDirections.length;x++) {
             playerWalkAnimation[x] = new Animation(0.175f, walkFrameDirections[x]);
             playerWalkAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
@@ -165,11 +165,11 @@ public class Assets {
         
         // Swimming
         playerSwimSheet = new Texture("DuckSwimFrames.png");
-        tmp = TextureRegion.split(playerSwimSheet, playerSwimSheet.getWidth() / PLAYER_WALKSHEET_COLS, playerWalkSheet.getHeight() / PLAYER_WALKSHEET_ROWS);
-        TextureRegion[][] swimFrameDirections = new TextureRegion[PLAYER_WALKSHEET_COLS][PLAYER_WALKSHEET_ROWS];
+        tmp = TextureRegion.split(playerSwimSheet, playerSwimSheet.getWidth() / PLAYER_SHEET_COLS, playerWalkSheet.getHeight() / PLAYER_SHEET_ROWS);
+        TextureRegion[][] swimFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
         index = 0;
-        for (int i = 0; i < PLAYER_WALKSHEET_ROWS; i++) {
-            for (int j = 0; j < PLAYER_WALKSHEET_COLS; j++) {
+        for (int i = 0; i < PLAYER_SHEET_ROWS; i++) {
+            for (int j = 0; j < PLAYER_SHEET_COLS; j++) {
                 if (j % 2 == 0) {
                 	swimFrameDirections[index][j % 2] = tmp[i][j];
                 } else {
@@ -177,31 +177,31 @@ public class Assets {
                 }
             }
         }
-        playerSwimAnimation = new Animation[PLAYER_WALKSHEET_COLS];
+        playerSwimAnimation = new Animation[PLAYER_SHEET_COLS];
         for (int x = 0; x < swimFrameDirections.length;x++) {
             playerSwimAnimation[x] = new Animation(0.175f, swimFrameDirections[x]);
             playerSwimAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
         }
         
-//     // Fly
-//        playerFlySheet = new Texture("DuckAnimationFrames.png");
-//        tmp = TextureRegion.split(playerWalkSheet, playerWalkSheet.getWidth() / PLAYER_WALKSHEET_COLS, playerWalkSheet.getHeight() / PLAYER_WALKSHEET_ROWS);
-//        TextureRegion[][] flyFrameDirections = new TextureRegion[PLAYER_WALKSHEET_COLS][PLAYER_WALKSHEET_ROWS];
-//        index = 0;
-//        for (int i = 0; i < PLAYER_WALKSHEET_ROWS; i++) {
-//            for (int j = 0; j < PLAYER_WALKSHEET_COLS; j++) {
-//                if (j % 2 == 0) {
-//                	swimFrameDirections[index][j % 2] = tmp[i][j];
-//                } else {
-//                	swimFrameDirections[index++][j % 2] = tmp[i][j];
-//                }
-//            }
-//        }
-//        playerSwimAnimation = new Animation[PLAYER_WALKSHEET_COLS];
-//        for (int x = 0; x < swimFrameDirections.length;x++) {
-//            playerSwimAnimation[x] = new Animation(0.175f, swimFrameDirections[x]);
-//            playerSwimAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
-//        }
+     // Fly
+        playerFlySheet = new Texture("DuckFlyFrames.png");
+        tmp = TextureRegion.split(playerFlySheet, playerFlySheet.getWidth() / PLAYER_SHEET_COLS, playerFlySheet.getHeight() / PLAYER_SHEET_ROWS);
+        TextureRegion[][] flyFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
+        index = 0;
+        for (int i = 0; i < PLAYER_SHEET_ROWS; i++) {
+            for (int j = 0; j < PLAYER_SHEET_COLS; j++) {
+                if (j % 2 == 0) {
+                	flyFrameDirections[index][j % 2] = tmp[i][j];
+                } else {
+                	flyFrameDirections[index++][j % 2] = tmp[i][j];
+                }
+            }
+        }
+        playerFlyAnimation = new Animation[PLAYER_SHEET_COLS];
+        for (int x = 0; x < flyFrameDirections.length;x++) {
+            playerFlyAnimation[x] = new Animation(0.175f, flyFrameDirections[x]);
+            playerFlyAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
+        }
         
 
         SallyNPCWalkSheet = new Texture("EvilDuckAnimationFrames.png");
