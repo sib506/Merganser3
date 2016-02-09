@@ -62,7 +62,7 @@ public class Level {
 //            		System.out.println(locationMap[x][y]);
             	}
             	else{
-            		locationMap[x][y] = "Somewhere on Hes-West";
+            		locationMap[x][y] = "Somewhere on Hes-East";
             	}
             }
             

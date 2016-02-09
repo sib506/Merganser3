@@ -86,7 +86,21 @@ public class WorldRenderer {
                 
                 batch.draw(Assets.shadow, c.getAbsPos().x - textureOffset.x - 9, c.getAbsPos().y - textureOffset.y - 4);
                 
-                if(c.isSwimming()){
+                if (c.isFlying()){
+                	if (c.getDirection() == Player.Direction.DOWN) {
+                        batch.draw(Assets.playerFlyAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.LEFT) {
+                        batch.draw(Assets.playerFlyAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else if (c.getDirection() == Player.Direction.RIGHT) {
+                        batch.draw(Assets.playerFlyAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    } else {
+                        batch.draw(Assets.playerFlyAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
+                                c.getAbsPos().y - textureOffset.y);
+                    }
+                }else if(c.isSwimming()){
                 	if (c.getDirection() == Player.Direction.DOWN) {
                         batch.draw(Assets.playerSwimAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
                                 c.getAbsPos().y - textureOffset.y);
@@ -101,21 +115,7 @@ public class WorldRenderer {
                                 c.getAbsPos().y - textureOffset.y);
                     }
                 }
-                else if (c.isFlying()){
-                	if (c.getDirection() == Player.Direction.DOWN) {
-                        batch.draw(Assets.playerWalkAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                                c.getAbsPos().y - textureOffset.y);
-                    } else if (c.getDirection() == Player.Direction.LEFT) {
-                        batch.draw(Assets.playerWalkAnimation[1].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                                c.getAbsPos().y - textureOffset.y);
-                    } else if (c.getDirection() == Player.Direction.RIGHT) {
-                        batch.draw(Assets.playerWalkAnimation[3].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                                c.getAbsPos().y - textureOffset.y);
-                    } else {
-                        batch.draw(Assets.playerWalkAnimation[0].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
-                                c.getAbsPos().y - textureOffset.y);
-                    }
-                }
+                
                 else{
                 	if (c.getDirection() == Player.Direction.DOWN) {
                         batch.draw(Assets.playerWalkAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
