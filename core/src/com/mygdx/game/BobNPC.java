@@ -16,7 +16,7 @@ public class BobNPC extends NPC {
         messages = new String[3];
         messages[0] = "Thank you for defeating RoboDuck!";
         messages[1] = "A new and improved RoboDuck has now appeared";
-        messages[2] = "The last time I saw him was by the Glasshouse in Langwith.";
+        messages[2] = "The last time I saw him, he was in Langwith.";
         doneInteraction = false;
     }
 
@@ -43,7 +43,7 @@ public class BobNPC extends NPC {
             level.characters.add(new EvilNPC(level, new Vector2(152, 123)));
             gameWorld.game.objectiveManager.completeObjective("Bob");
             gameWorld.game.objectiveManager.gameObjectives.remove("Bob");
-            gameWorld.game.objectiveManager.addObjective("RoboDuck2", new Objective("Defeat RoboDuck Mk2 beind the Glasshouse by Langwith", 100, "100 Points", false));
+            gameWorld.game.objectiveManager.addObjective("RoboDuck2", new Objective("Defeat RoboDuck Mk2 near Langwith", 100, "100 Points", false));
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
 //            Game.objectives[0] = true;
