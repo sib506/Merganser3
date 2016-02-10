@@ -114,6 +114,7 @@ public class PartyManager {
     	for (int i = 0; i<consumables.size(); i++){
     		if(consumables.get(i) == id){
     			consumables.remove(i);
+    			break;
     		}
     	}
     }
