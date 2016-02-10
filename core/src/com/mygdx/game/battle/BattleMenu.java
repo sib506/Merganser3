@@ -388,8 +388,11 @@ public class BattleMenu {
     private void itemMenuInput(InputHandler.inputType input){
         switch (input){
             case ACT:{
-        		skillOrItemID=Game.party.getConsumables().get(itemMenuPointer);
-                setItemTargeting();
+        		if(!itemMenu.isEmpty()){
+        			skillOrItemID=Game.party.getConsumables().get(itemMenuPointer);
+                    setItemTargeting();
+        		}
+            	
 
                 break;
             }
@@ -400,12 +403,12 @@ public class BattleMenu {
             }
             //removed up down movement to stop index out of range error
             case LEFT:{
-                if(itemMenuPointer!=0 )
+                if(itemMenuPointer!=0 && !itemMenu.isEmpty())
                     itemMenuPointer-=1;
                 break;
             }
             case RIGHT:{
-                if(itemMenuPointer!=itemMenu.size()-1)
+                if(itemMenuPointer!=itemMenu.size()-1 && !itemMenu.isEmpty())
                     itemMenuPointer+=1;
                 break;
             }

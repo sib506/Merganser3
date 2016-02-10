@@ -18,7 +18,7 @@ public class SallyNPC extends NPC {
         messages[0] = "Help! There is a robo duck on the loose!";
         messages[1] = "Please help us by finding him and defeating him!";
         messages[2] = "The last time I saw him was by the Catalyst building.";
-        messages[3] = "For being such a swell guy and having a go here is a health thing!";
+        messages[3] = "For being such a swell guy and having a go here are some resources to help!";
         doneInteraction = false;
     }
 
@@ -49,8 +49,11 @@ public class SallyNPC extends NPC {
 
             
             //add the new consumable type to items and the new consumable reference to party
-            gameWorld.game.items.addConsumable(new Consumable("Health", "Much health", consumeType.HEAL, 10));
-            gameWorld.game.party.addConsumable(Game.items.getConsumables().size()-1);
+//            Game.items.addConsumable(new Consumable("Health", "Much health", consumeType.HEAL, 10));
+            Game.party.addConsumable(0);
+            Game.party.addConsumable(1);
+            Game.party.addConsumable(2);
+            
             
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
