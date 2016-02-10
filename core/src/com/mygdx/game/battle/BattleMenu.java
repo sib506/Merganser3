@@ -363,12 +363,12 @@ public class BattleMenu {
 //                    skillMenuPointer-=1;
 //                break;
 //            }
-            case UP:{
+            case LEFT:{
                 if(skillMenuPointer!=0)
                     skillMenuPointer-=1;
                 break;
             }
-            case DOWN:{
+            case RIGHT:{
                 if(skillMenuPointer!=skillMenu.size()-1 )
                     skillMenuPointer+=1;
                 break;
@@ -397,13 +397,13 @@ public class BattleMenu {
                 battleUI.removeUIComponent(itemUI);
                 break;
             }
-            //removed left right movement to stop index out of range error
-            case UP:{
+            //removed up down movement to stop index out of range error
+            case LEFT:{
                 if(itemMenuPointer!=0 )
                     itemMenuPointer-=1;
                 break;
             }
-            case DOWN:{
+            case RIGHT:{
                 if(itemMenuPointer!=itemMenu.size()-1)
                     itemMenuPointer+=1;
                 break;

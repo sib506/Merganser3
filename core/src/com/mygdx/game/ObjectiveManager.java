@@ -18,8 +18,9 @@ public class ObjectiveManager {
 	public static int battlesWon = 0;
 	public Game game;
 
-	public boolean complete3 = false;
-	public boolean complete6 = false;
+	private boolean complete3 = false;
+	private boolean complete6 = false;
+	
 	
 	public ObjectiveManager(Game game) {
 		this.game = game;
@@ -72,14 +73,15 @@ public class ObjectiveManager {
 	}
 
 	public void checkPoints() {
-		if (Game.pointsScore >= 200 && !gameObjectives.get("200Points").isComplete()) {
+		if (Game.pointsScore >= 200 && gameObjectives.containsKey("200Points")) {
 			gameObjectives.get("200Points").setComplete(true);
 			gameObjectives.put("400Points", new Objective("Reach 400 points", 0, "Mystery reward", true));
 			gameObjectives.remove("200Points");
 			ObjectiveNotification("You have over 200 points. Objective completed.");
 		}
-		else if (Game.pointsScore >= 400 && !gameObjectives.get("400Points").isComplete()){
+		else if (Game.pointsScore >= 400 && gameObjectives.containsKey("400Points")){
 			gameObjectives.get("400Points").setComplete(true);
+			gameObjectives.remove("400Points");
 			ObjectiveNotification("You have over 400 points. Objective completed.");
 		}
 	}
@@ -128,7 +130,7 @@ public class ObjectiveManager {
 	}
 
 	public void checkAllComplete() {
-		if (objectivesComplete >= 1) {
+		if (gameObjectives.size() == 1) {
 			game.newWinScreen();
 		}
 	}
