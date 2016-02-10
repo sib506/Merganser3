@@ -106,6 +106,8 @@ public class ObjectiveManager {
 		if (objectivesComplete == 3 && !complete3) {
 			ObjectiveNotification("You have completed 3 objectives. Have some new skills!");
 			gameObjectives.get("3Obj").setComplete(true);
+			gameObjectives.remove("3Obj");
+			gameObjectives.put("6Obj", new Objective("Complete 6 objectives", 0, "Mystery reward", true));
 			Game.party.getMember(0).addSkill(9);
 			Game.party.getMember(1).addSkill(10);
 			Game.party.getMember(2).addSkill(11);
@@ -119,7 +121,6 @@ public class ObjectiveManager {
 		if (objectivesComplete == 6 && !complete6) {
 			ObjectiveNotification("You have completed 6 objectives. Have some new skills!");
 			gameObjectives.get("6Obj").setComplete(true);
-			gameObjectives.put("6Obj", new Objective("Complete 6 objectives", 0, "Mystery reward", true));
 			gameObjectives.remove("6Obj");
 			Game.party.getMember(0).addSkill(13);
 			Game.party.getMember(1).addSkill(14);

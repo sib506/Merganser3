@@ -6,17 +6,17 @@ import com.mygdx.game.UI.UIManager;
 /**
  * This class represents the first npc of the game.
  */
-public class SallyNPC extends NPC {
+public class BobNPC extends NPC {
 
     private boolean doneInteraction;
     private String[] messages;
 
-    public SallyNPC(Level level, Vector2 currentTile) {
+    public BobNPC(Level level, Vector2 currentTile) {
         super(level, currentTile);
         messages = new String[3];
-        messages[0] = "Help! There is a robo duck on the loose!";
-        messages[1] = "Please help us by finding him and defeating him!";
-        messages[2] = "The last time I saw him was by the Catalyst building.";
+        messages[0] = "Thank you for defeating RoboDuck!";
+        messages[1] = "A new and improved RoboDuck has now appeared";
+        messages[2] = "The last time I saw him was by the Glasshouse in Langwith.";
         doneInteraction = false;
     }
 
@@ -39,16 +39,16 @@ public class SallyNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         if (!doneInteraction) {
-            uiManager.addNotification("You talked to Sally! You got 40 points!");
-            level.characters.add(new RoboNPC(level, new Vector2(75, 98)));
-            gameWorld.game.objectiveManager.completeObjective("Sally");
-            gameWorld.game.objectiveManager.gameObjectives.remove("Sally");
-            gameWorld.game.objectiveManager.addObjective("RoboDuck", new Objective("Defeat RoboDuck by the Catalyst", 100, "100 Points", false));
+            uiManager.addNotification("You talked to Bob! You got 40 points!");
+            level.characters.add(new EvilNPC(level, new Vector2(152, 123)));
+            gameWorld.game.objectiveManager.completeObjective("Bob");
+            gameWorld.game.objectiveManager.gameObjectives.remove("Bob");
+            gameWorld.game.objectiveManager.addObjective("RoboDuck2", new Objective("Defeat RoboDuck Mk2 beind the Glasshouse by Langwith", 100, "100 Points", false));
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
 //            Game.objectives[0] = true;
             doneInteraction = true;
-            level.characters.remove(this);
+//            level.characters.remove(this);
         }
     }
 }

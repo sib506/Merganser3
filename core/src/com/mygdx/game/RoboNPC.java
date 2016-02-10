@@ -38,19 +38,22 @@ public class RoboNPC extends NPC {
         
         if(gameWorld.game.objectiveManager.gameObjectives.containsKey("RoboDuck")){
         	uiManager.addNotification("You defeated Roboduck! You got 100 points!");
+        	uiManager.addNotification("Talk to Bob by TFTV ");
+        	gameWorld.game.objectiveManager.addObjective("Bob", new Objective("Talk to Bob by TFTV", 40, "40 Points", false));
         	gameWorld.game.objectiveManager.completeObjective("RoboDuck");
+        	gameWorld.game.objectiveManager.gameObjectives.remove("RoboDuck");
         }
         else{
         	uiManager.addNotification("You needed to talk to Sally! No points for you!");
         }
-        level.characters.add(new EvilNPC(level, new Vector2(149, 70)));
+        level.characters.add(new BobNPC(level, new Vector2(80, 83)));
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
         BattleParameters params = new BattleParameters(0);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
-        Agent enemyDuck = new Agent("Robo Duck", Agent.AgentType.ENEMY,new Statistics(180,300,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
+        Agent enemyDuck = new Agent("Robo Duck", Agent.AgentType.ENEMY,new Statistics(1,300,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
 //        enemyDuck.equipEquipment(0);
 //        enemyDuck.equipEquipment(1);
         enemyDuck.addSkill(4);

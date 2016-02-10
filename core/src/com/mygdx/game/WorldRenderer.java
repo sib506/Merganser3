@@ -133,7 +133,7 @@ public class WorldRenderer {
                 }
                 
                 
-            } else if (c instanceof SallyNPC) {
+            } else if (c instanceof SallyNPC || c instanceof BobNPC) {
                 if (c.getState() != Character.CharacterState.TRANSITIONING) {
                     c.setStateTime(0.174f);
                 }else{
