@@ -131,7 +131,7 @@ public class ObjectiveManager {
 	}
 
 	public void checkAllComplete() {
-		if (gameObjectives.size() == 1) {
+		if (gameObjectives.size() == 1 && gameObjectives.containsKey("AllObj")) {
 			game.newWinScreen();
 		}
 	}
