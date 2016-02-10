@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.Consumable.consumeType;
 import com.mygdx.game.UI.UIManager;
 
 /**
@@ -13,10 +14,11 @@ public class SallyNPC extends NPC {
 
     public SallyNPC(Level level, Vector2 currentTile) {
         super(level, currentTile);
-        messages = new String[3];
+        messages = new String[4];
         messages[0] = "Help! There is a robo duck on the loose!";
         messages[1] = "Please help us by finding him and defeating him!";
         messages[2] = "The last time I saw him was by the Catalyst building.";
+        messages[3] = "For being such a swell guy and having a go here is a health thing!";
         doneInteraction = false;
     }
 
@@ -44,6 +46,12 @@ public class SallyNPC extends NPC {
             gameWorld.game.objectiveManager.completeObjective("Sally");
             gameWorld.game.objectiveManager.gameObjectives.remove("Sally");
             gameWorld.game.objectiveManager.addObjective("RoboDuck", new Objective("Defeat RoboDuck by the Catalyst", 100, "100 Points", false));
+
+            
+            //add the new consumable type to items and the new consumable reference to party
+            gameWorld.game.items.addConsumable(new Consumable("Health", "Much health", consumeType.HEAL, 10));
+            gameWorld.game.party.addConsumable(Game.items.getConsumables().size()-1);
+            
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
 //            Game.objectives[0] = true;

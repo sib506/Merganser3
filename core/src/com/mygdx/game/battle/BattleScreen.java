@@ -78,6 +78,7 @@ public class BattleScreen extends ScreenAdapter {
 
 
         //Initialise the size of the battlemenu menus
+        System.out.println(Game.party.getConsumables().size());
         battleMenu.setItemMenuSize(Game.party.getConsumables().size());
         battleMenu.updateBattleLayout();
 
@@ -195,6 +196,8 @@ public class BattleScreen extends ScreenAdapter {
         if(turnOrder.get(turnOrderPointer).type== Agent.AgentType.FRIENDLY) {
             turnOrder.get(turnOrderPointer).setX(turnOrder.get(turnOrderPointer).getX() + 10);
             battleMenu.resetMenus(); //Reset battleUI menus
+            //ASESSMENT 3 AMENDMENT
+            battleMenu.setItemMenuSize(Game.party.getConsumables().size());
         }
         //Check for win/lose condition
         if(enemyParty.isDead()){ //Win battle

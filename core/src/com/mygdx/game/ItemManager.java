@@ -63,4 +63,9 @@ public class ItemManager {
                 ", consumables=" + consumables +
                 '}';
     }
+
+	public List<Consumable> getConsumables() {
+		// TODO Auto-generated method stub
+		return consumables;
+	}
 }

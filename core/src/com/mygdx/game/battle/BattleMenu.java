@@ -388,8 +388,9 @@ public class BattleMenu {
     private void itemMenuInput(InputHandler.inputType input){
         switch (input){
             case ACT:{
-                skillOrItemID=Game.party.getConsumables().get(itemMenuPointer);
+        		skillOrItemID=Game.party.getConsumables().get(itemMenuPointer);
                 setItemTargeting();
+
                 break;
             }
             case ESC:{
@@ -414,9 +415,11 @@ public class BattleMenu {
         }
        itemUI.selectItem(itemMenuPointer);
 
+
     }
 
-    /**
+
+	/**
      * Sets the targeting type to skill while storing the previous menu pointer as the same targeting function
      * is used for both skill and item targeting.
      */
@@ -442,20 +445,22 @@ public class BattleMenu {
      * You cannot wrap around the screen i.e. pressing left in the leftmost column won't select the rightmost column.
      */
     private void targetingMenuInput(InputHandler.inputType input){
-
+    	Agent currentAgent = battleScreen.getCurrentTurnAgent();
         switch (input){
             case ACT:{
                 if(isSkillTargeting) {
-                    if(battleScreen.getCurrentTurnAgent().getType()== Agent.AgentType.FRIENDLY){
-                        if(battleScreen.getCurrentTurnAgent().getStats().getCurrentMP()-Game.skills.getSkill(0).getMPCost()<0){
-                            createInfoBox(battleScreen.getCurrentTurnAgent().getName() + " does not have enough MP to use this skill", 3);
+                	//if the current agent is friendly
+                    if(currentAgent.getType()== Agent.AgentType.FRIENDLY){
+                    	//if the skill cost is greater than current agents MP
+                        if(currentAgent.getStats().getCurrentMP() < Game.skills.getSkill(0).getMPCost()){
+                            createInfoBox(currentAgent.getName() + " does not have enough MP to use this skill", 3);
                             break;
                         }
                     }
-                    currentUseAbility = new UseSkill(battleScreen.getCurrentTurnAgent(),battleScreen.turnOrder.get(battleLayout[targetMenuPointerRow][targetMenuPointerColumn]), skillOrItemID, this);
-                }
-                else if(isItemTargeting) {
-                    currentUseAbility = new UseItem(battleScreen.getCurrentTurnAgent(),battleScreen.turnOrder.get(battleLayout[targetMenuPointerRow][targetMenuPointerColumn]), skillOrItemID, this);
+                    currentUseAbility = new UseSkill(currentAgent,battleScreen.turnOrder.get(battleLayout[targetMenuPointerRow][targetMenuPointerColumn]), skillOrItemID, this);
+                
+                }else if(isItemTargeting) {
+                    currentUseAbility = new UseItem(currentAgent,battleScreen.turnOrder.get(battleLayout[targetMenuPointerRow][targetMenuPointerColumn]), skillOrItemID, this);
                 }
                 break;
             }
