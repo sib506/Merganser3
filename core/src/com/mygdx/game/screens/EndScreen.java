@@ -1,3 +1,5 @@
+//EDITTED IN ASSESMENT 3
+
 package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
@@ -14,7 +16,7 @@ import com.mygdx.game.assets.Assets;
 import com.mygdx.game.input.InputHandler;
 
 /**
- * A simple screen that is used before the game world is loaded.
+ * A simple screen that is used when the game is won or lost
  */
 public class EndScreen extends ScreenAdapter {
 
@@ -36,11 +38,15 @@ public class EndScreen extends ScreenAdapter {
         runningTime = 0;
     }
 
+
     public void render (float delta) {
+        
         Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
         runningTime += delta;
         update();
+        
         batch.begin();
         batch.draw(Assets.title, 0, 0);
         Pixmap black = new Pixmap(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
@@ -61,6 +67,7 @@ public class EndScreen extends ScreenAdapter {
         batch.draw(blackTexture,0,0);
         batch.end();
         
+        //Both disposing of textures and setting them to null is required to avoid memory leaks
         black.dispose();
         black = null;
         blackTexture.dispose();
