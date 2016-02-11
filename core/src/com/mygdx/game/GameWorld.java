@@ -155,7 +155,7 @@ public class GameWorld {
             case BATTLE:
                 if (game.wonBattle) {
                     uiManager.addNotification("You won the battle!");
-                    game.objectiveManager.battleWon(uiManager);
+//                    game.objectiveManager.battleWon(uiManager);
                 } else {
 //                    Game.party.setHealths(1);
 //                    level.player.setCurrentTile(new Vector2(118, 94));

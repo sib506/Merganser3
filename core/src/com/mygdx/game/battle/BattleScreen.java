@@ -284,10 +284,13 @@ public class BattleScreen extends ScreenAdapter {
      */
     public void endBattle(){
         if(isBattleOver){
-            if(isBattleWon)
+            if(isBattleWon){
                 game.returnToWorld(true);
-            else
+            	game.objectiveManager.battleWon();
+            }
+            else{
             	game.newGameOverScreen();
+            }
         }
     }
 

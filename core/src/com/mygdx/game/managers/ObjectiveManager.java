@@ -39,18 +39,22 @@ public class ObjectiveManager {
 		return gameObjectives.size()-1;
 	}
 
-	public void battleWon(UIManager uiManager) {
+	public void battleWon() {
 		battlesWon += 1;
 		if (battlesWon == 10 && !gameObjectives.get("10Batt").isComplete()) {
 			gameObjectives.get("10Batt").setComplete(true);
 			gameObjectives.remove("10Batt");
 			objectivesComplete += 1;
 			Game.pointsScore += 50;
-			uiManager.addNotification("You won 10 battles! You got 50 points!");
+			ObjectiveNotification("You won 10 battles! You got 50 points!");
 			Game.party.addConsumable(0);
             Game.party.addConsumable(1);
             Game.party.addConsumable(2);
 		} 
+	}
+	
+	public void check10battles(){
+		
 	}
 	
 	public void completeObjective(String key){
