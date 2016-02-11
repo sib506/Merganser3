@@ -457,7 +457,7 @@ public class BattleMenu {
                 	//if the current agent is friendly
                     if(currentAgent.getType()== Agent.AgentType.FRIENDLY){
                     	//if the skill cost is greater than current agents MP
-                        if(currentAgent.getStats().getCurrentMP() < Game.skills.getSkill(0).getMPCost()){
+                        if(currentAgent.getStats().getCurrentMP() < Game.skills.getSkill(skillOrItemID).getMPCost()){
                             createInfoBox(currentAgent.getName() + " does not have enough MP to use this skill", 3);
                             break;
                         }

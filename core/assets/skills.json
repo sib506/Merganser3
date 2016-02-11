@@ -101,7 +101,7 @@
 	"description":"Also an excellent hangover cure",
 	"skillType":"HEAL",
 	"basePower":30,
-	"MPCost":10
+	"MPCost":5
 	},
 	{
 	"ID":13,

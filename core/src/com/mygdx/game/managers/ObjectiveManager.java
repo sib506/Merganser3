@@ -43,22 +43,14 @@ public class ObjectiveManager {
 		battlesWon += 1;
 		if (battlesWon == 10 && !gameObjectives.get("10Batt").isComplete()) {
 			gameObjectives.get("10Batt").setComplete(true);
-			gameObjectives.put("20Batt", new Objective("Win 20 battles", 50, "50 Points", true));
 			gameObjectives.remove("10Batt");
-//			objectives[2] = true;
 			objectivesComplete += 1;
 			Game.pointsScore += 50;
 			uiManager.addNotification("You won 10 battles! You got 50 points!");
 			Game.party.addConsumable(0);
             Game.party.addConsumable(1);
             Game.party.addConsumable(2);
-		} else if (battlesWon == 20 && !gameObjectives.get("20Batt").isComplete()) {
-			gameObjectives.get("20Batt").setComplete(true);
-//			objectives[5] = true;
-			objectivesComplete += 1;
-			Game.pointsScore += 50;
-			uiManager.addNotification("You won 20 battles! You got 50 points!");
-		}
+		} 
 	}
 	
 	public void completeObjective(String key){
@@ -82,11 +74,13 @@ public class ObjectiveManager {
 			gameObjectives.get("200Points").setComplete(true);
 			gameObjectives.put("400Points", new Objective("Reach 400 points", 0, "Mystery reward", true));
 			gameObjectives.remove("200Points");
+			objectivesComplete++;
 			ObjectiveNotification("You have over 200 points. Objective completed.");
 		}
 		else if (Game.pointsScore >= 400 && gameObjectives.containsKey("400Points")){
 			gameObjectives.get("400Points").setComplete(true);
 			gameObjectives.remove("400Points");
+			objectivesComplete++;
 			ObjectiveNotification("You have over 400 points. Objective completed.");
 		}
 	}
@@ -113,11 +107,11 @@ public class ObjectiveManager {
 			gameObjectives.get("3Obj").setComplete(true);
 			gameObjectives.remove("3Obj");
 			gameObjectives.put("6Obj", new Objective("Complete 6 objectives", 0, "Mystery reward", true));
+			objectivesComplete++;
 			Game.party.getMember(0).addSkill(9);
 			Game.party.getMember(1).addSkill(10);
 			Game.party.getMember(2).addSkill(11);
 			Game.party.getMember(3).addSkill(12);
-//			Game.party.
 			complete3 = true;
 		}
 	}
@@ -127,6 +121,7 @@ public class ObjectiveManager {
 			ObjectiveNotification("You have completed 6 objectives. Have some new skills!");
 			gameObjectives.get("6Obj").setComplete(true);
 			gameObjectives.remove("6Obj");
+			objectivesComplete++;
 			Game.party.getMember(0).addSkill(13);
 			Game.party.getMember(1).addSkill(14);
 			Game.party.getMember(2).addSkill(15);
