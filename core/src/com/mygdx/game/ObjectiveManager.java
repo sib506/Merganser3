@@ -47,6 +47,9 @@ public class ObjectiveManager {
 			objectivesComplete += 1;
 			Game.pointsScore += 50;
 			uiManager.addNotification("You won 10 battles! You got 50 points!");
+			Game.party.addConsumable(0);
+            Game.party.addConsumable(1);
+            Game.party.addConsumable(2);
 		} else if (battlesWon == 20 && !gameObjectives.get("20Batt").isComplete()) {
 			gameObjectives.get("20Batt").setComplete(true);
 //			objectives[5] = true;

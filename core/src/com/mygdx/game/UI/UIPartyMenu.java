@@ -24,7 +24,7 @@ public class UIPartyMenu extends UIComponent {
     
     private UIMessageBox statsDisplay = new UIMessageBox("STATS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2, (y + height + 4), width/6, 0, 10);
     private UIMessageBox skillsDisplay = new UIMessageBox("SKILLS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10);
-    private UIMessageBox equipmentDisplay = new UIMessageBox("EQUIPMENT", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10);
+    private UIMessageBox itemDisplay = new UIMessageBox("ITEMS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10);
 
     public UIPartyMenu(float x, float y, float width, float height, PartyManager party) {
         super(x, y, width, height);
@@ -48,7 +48,7 @@ public class UIPartyMenu extends UIComponent {
 
         	statsDisplay.setColour(Color.LIGHT_GRAY);
         	skillsDisplay.setColour(Color.LIGHT_GRAY);
-        	equipmentDisplay.setColour(Color.LIGHT_GRAY);
+        	itemDisplay.setColour(Color.LIGHT_GRAY);
         	
             new UIMessageBox("", Assets.consolas22, Color.WHITE, Align.center, x, y, width, height).render(batch, patch);
             for (int i=0;i<playerList.size();i++) {
@@ -65,12 +65,22 @@ public class UIPartyMenu extends UIComponent {
                 }
             }
             if (menuSelected == 2) {
-            	equipmentDisplay.setColour(Color.WHITE);
+            	itemDisplay.setColour(Color.WHITE);
+            	for(int i =0; i < Game.items.getConsumables().size(); i++){
+            		Consumable currentConsumable = Game.items.getConsumable(i);
+            		int count = 0;
+            		for(int j = 0; j < Game.party.getConsumables().size(); j++){
+            			if(currentConsumable.getID() == Game.party.getConsumables().get(j)){
+            				count++;
+            			}
+            		}
+            		new UIItem(x + width/2, (y + height - 86)-(90*i), width/2, currentConsumable, count).render(batch, patch);
+            	}
             }
             
             statsDisplay.render(batch, patch);
             skillsDisplay.render(batch, patch);
-            equipmentDisplay.render(batch, patch);
+            itemDisplay.render(batch, patch);
 
         }
     }

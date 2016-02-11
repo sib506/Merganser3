@@ -53,7 +53,7 @@ public class SallyNPC extends NPC {
             Game.party.addConsumable(0);
             Game.party.addConsumable(1);
             Game.party.addConsumable(2);
-            
+            Game.party.addConsumable(0);
             
 //            Game.pointsScore += 40;
 //            Game.objectivesComplete += 1;
