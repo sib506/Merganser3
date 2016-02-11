@@ -287,7 +287,7 @@ public class BattleScreen extends ScreenAdapter {
             if(isBattleWon)
                 game.returnToWorld(true);
             else
-                game.returnToWorld(false);
+            	game.newGameOverScreen();
         }
     }
 
