@@ -2,6 +2,9 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Json;
+import com.mygdx.game.managers.ItemManager;
+import com.mygdx.game.managers.PartyManager;
+import com.mygdx.game.managers.SkillManager;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

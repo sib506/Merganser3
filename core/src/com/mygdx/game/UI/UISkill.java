@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
-import com.mygdx.game.Assets;
 import com.mygdx.game.Skill;
+import com.mygdx.game.assets.Assets;
 
 /**
  * The skill menu is part of the party menu and show information about a particular skill.

@@ -1,7 +1,10 @@
-package com.mygdx.game;
+package com.mygdx.game.managers;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mygdx.game.Consumable;
+import com.mygdx.game.Equipable;
 
 /**
  * Stores and manages every item in the game.

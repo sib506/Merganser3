@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
-import com.mygdx.game.Assets;
+import com.mygdx.game.assets.Assets;
 
 /**
  * The UI renderer calls the render methods of each ui component in the game.

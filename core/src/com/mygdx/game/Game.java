@@ -1,7 +1,16 @@
 package com.mygdx.game;
 
+import com.mygdx.game.assets.Assets;
 import com.mygdx.game.battle.BattleParameters;
 import com.mygdx.game.battle.BattleScreen;
+import com.mygdx.game.managers.ItemManager;
+import com.mygdx.game.managers.ObjectiveManager;
+import com.mygdx.game.managers.PartyManager;
+import com.mygdx.game.managers.SkillManager;
+import com.mygdx.game.screens.EndScreen;
+import com.mygdx.game.screens.StartScreen;
+import com.mygdx.game.screens.WinScreen;
+import com.mygdx.game.screens.WorldScreen;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

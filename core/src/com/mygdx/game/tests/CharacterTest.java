@@ -4,7 +4,7 @@ import static org.mockito.Mockito.mock;
 
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.Level;
-import com.mygdx.game.SallyNPC;
+import com.mygdx.game.characters.SallyNPC;
 
 import junit.framework.TestCase;
 

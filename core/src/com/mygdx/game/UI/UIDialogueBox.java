@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
-import com.mygdx.game.Assets;
+import com.mygdx.game.assets.Assets;
 
 /**
  * A dialogue box is a single message with a pointer in the bottom right corner.

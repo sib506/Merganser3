@@ -6,9 +6,9 @@ import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
-import com.mygdx.game.Assets;
-import com.mygdx.game.InputHandler;
-import com.mygdx.game.ObjectiveManager;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.input.InputHandler;
+import com.mygdx.game.managers.ObjectiveManager;
 
 /**
  * The party menu allows the user to see information about each party member. It

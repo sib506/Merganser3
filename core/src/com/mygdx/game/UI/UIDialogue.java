@@ -2,7 +2,7 @@ package com.mygdx.game.UI;
 
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.mygdx.game.InputHandler;
+import com.mygdx.game.input.InputHandler;
 
 /**
  * A UIComponent that is composed of a sequence of dialogue boxes.

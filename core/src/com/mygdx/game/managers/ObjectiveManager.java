@@ -1,7 +1,9 @@
-package com.mygdx.game;
+package com.mygdx.game.managers;
 
 import java.util.LinkedHashMap;
 
+import com.mygdx.game.Game;
+import com.mygdx.game.Objective;
 import com.mygdx.game.UI.UIManager;
 
 public class ObjectiveManager {

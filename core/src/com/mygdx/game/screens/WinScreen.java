@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
@@ -9,20 +9,26 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
+import com.mygdx.game.Game;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.input.InputHandler;
 
 /**
  * A simple screen that is used before the game world is loaded.
  */
-public class StartScreen extends ScreenAdapter {
+public class WinScreen extends ScreenAdapter {
 
-    private final Game game;
     private float fadeInCounter;
     private float runningTime;
-    private final String START_MESSAGE = "PRESS 'E' TO START GAME";
+    private final String END_MESSAGE;
+    private final int END_SCORE; 
+    private final String QUIT_MESSAGE;
     private SpriteBatch batch = new SpriteBatch();
 
-    public StartScreen (Game game){
-        this.game = game;
+    public WinScreen (Game game){
+        this.END_SCORE = Game.pointsScore;
+        this.END_MESSAGE = "CONGRATULATIONS.HESLINGTON IS SAFE!\nYOUR SCORE: " + END_SCORE;
+        this.QUIT_MESSAGE = "PRESS E TO EXIT";
     }
 
     public void show() {
@@ -45,9 +51,11 @@ public class StartScreen extends ScreenAdapter {
         }
         black.fill();
         if (runningTime %1 > 0.5f) {
-            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, START_MESSAGE, Color.GRAY, Gdx.graphics.getWidth(), Align.center, false), 0, 100);
+            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, END_MESSAGE, Color.GRAY, Gdx.graphics.getWidth(), Align.center, false), 0, 200);
+            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, QUIT_MESSAGE, Color.GRAY, Gdx.graphics.getWidth(), Align.center, false), 0, 100);
         } else {
-            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, START_MESSAGE, Color.WHITE, Gdx.graphics.getWidth(), Align.center, false), 0, 100);
+            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, END_MESSAGE, Color.WHITE, Gdx.graphics.getWidth(), Align.center, false), 0, 200);
+            Assets.consolas22.draw(batch, new GlyphLayout(Assets.consolas22, QUIT_MESSAGE, Color.WHITE, Gdx.graphics.getWidth(), Align.center, false), 0, 100);
         }
         Texture blackTexture = new Texture(black);
         batch.draw(blackTexture,0,0);
@@ -63,7 +71,7 @@ public class StartScreen extends ScreenAdapter {
     private void update() {
         InputHandler.update();
         if (InputHandler.isActJustPressed()) {
-            game.newWorldScreen();
+            Gdx.app.exit();
         }
     }
 }

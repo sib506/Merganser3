@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Agent;
-import com.mygdx.game.Assets;
-import com.mygdx.game.PartyManager;
 import com.mygdx.game.Statistics;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.managers.PartyManager;
 
 import java.util.ArrayList;
 import java.util.List;

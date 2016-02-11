@@ -6,10 +6,10 @@ import java.util.List;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Align;
-import com.mygdx.game.Assets;
 import com.mygdx.game.Level;
-import com.mygdx.game.ObjectiveManager;
-import com.mygdx.game.PartyManager;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.managers.ObjectiveManager;
+import com.mygdx.game.managers.PartyManager;
 
 /**
  * This class is responsible for the creation of UI elements on the screen.

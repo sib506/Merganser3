@@ -1,7 +1,7 @@
 package com.mygdx.game.battle;
 
 import com.mygdx.game.Agent;
-import com.mygdx.game.PartyManager;
+import com.mygdx.game.managers.PartyManager;
 
 /**
  * Class holds the parameters to pass to the battlescreen when switching between screens.

@@ -9,10 +9,10 @@ import com.mygdx.game.Agent.AgentType;
 import com.mygdx.game.Consumable;
 import com.mygdx.game.CurrentEquipment;
 import com.mygdx.game.Game;
-import com.mygdx.game.ItemManager;
 import com.mygdx.game.Statistics;
 import com.mygdx.game.UseItem;
 import com.mygdx.game.battle.BattleMenu;
+import com.mygdx.game.managers.ItemManager;
 
 import junit.framework.TestCase;
 

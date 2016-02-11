@@ -2,11 +2,10 @@ package com.mygdx.game;
 
 import static com.mygdx.game.Level.TILE_SIZE;
 
-import java.util.Arrays;
 import java.util.Comparator;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.input.InputHandler;
 
 /**
  * This abstract class represents a character in the Level.

@@ -1,6 +1,8 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.characters.NPC;
+import com.mygdx.game.input.InputHandler;
 
 /**
  * This class is a character that is controlled by the user.

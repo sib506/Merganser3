@@ -11,12 +11,12 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Agent;
-import com.mygdx.game.Assets;
 import com.mygdx.game.Game;
-import com.mygdx.game.InputHandler;
-import com.mygdx.game.PartyManager;
 import com.mygdx.game.UseAbility;
 import com.mygdx.game.UseSkill;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.input.InputHandler;
+import com.mygdx.game.managers.PartyManager;
 
 /**
  * The BattleScreen controls all the systems for the Battle system, including turn order, skill use and drawing agents to the screen.

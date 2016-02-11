@@ -4,12 +4,7 @@ package com.mygdx.game.tests;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-//import com.badlogic.gdx.Gdx;
-//import com.badlogic.gdx.Input;
-//import com.mygdx.game.Game;
-import com.mygdx.game.InputHandler;
-//import com.mygdx.game.battle.BattleParameters;
-//import com.mygdx.game.battle.BattleScreen;
+import com.mygdx.game.input.InputHandler;
 
 import junit.framework.TestCase;
 

@@ -1,8 +1,8 @@
 package com.mygdx.game.tests;
 
 import com.mygdx.game.Equipable;
-import com.mygdx.game.ItemManager;
 import com.mygdx.game.Equipable.equipType;
+import com.mygdx.game.managers.ItemManager;
 
 import junit.framework.TestCase;
 

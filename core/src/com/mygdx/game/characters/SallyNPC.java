@@ -1,7 +1,10 @@
-package com.mygdx.game;
+package com.mygdx.game.characters;
 
 import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.Consumable.consumeType;
+import com.mygdx.game.Game;
+import com.mygdx.game.GameWorld;
+import com.mygdx.game.Level;
+import com.mygdx.game.Objective;
 import com.mygdx.game.UI.UIManager;
 
 /**

@@ -8,7 +8,11 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.UI.UICurrentLocation;
 import com.mygdx.game.UI.UIManager;
 import com.mygdx.game.UI.UIScore;
+import com.mygdx.game.assets.Assets;
 import com.mygdx.game.battle.BattleParameters;
+import com.mygdx.game.characters.NPC;
+import com.mygdx.game.characters.SallyNPC;
+import com.mygdx.game.input.InputHandler;
 
 /**
  * This class contains the high level logic for the game world and contains the level and UI objects.

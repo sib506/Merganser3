@@ -1,11 +1,18 @@
-package com.mygdx.game;
-
-import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.UI.UIManager;
-import com.mygdx.game.battle.BattleParameters;
+package com.mygdx.game.characters;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.Agent;
+import com.mygdx.game.CurrentEquipment;
+import com.mygdx.game.Game;
+import com.mygdx.game.GameWorld;
+import com.mygdx.game.Level;
+import com.mygdx.game.Statistics;
+import com.mygdx.game.UI.UIManager;
+import com.mygdx.game.assets.Assets;
+import com.mygdx.game.battle.BattleParameters;
 
 /**
  * This class represents the vampire boss of the game.

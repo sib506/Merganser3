@@ -1,6 +1,8 @@
-package com.mygdx.game;
+package com.mygdx.game.managers;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mygdx.game.Skill;
 
 /**
  * Stores and manages every skill.

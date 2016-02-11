@@ -1,6 +1,9 @@
-package com.mygdx.game;
+package com.mygdx.game.screens;
 
 import com.badlogic.gdx.ScreenAdapter;
+import com.mygdx.game.Game;
+import com.mygdx.game.GameWorld;
+import com.mygdx.game.assets.Assets;
 
 /**
  * The screen that contains the gameWorld and worldRenderer.

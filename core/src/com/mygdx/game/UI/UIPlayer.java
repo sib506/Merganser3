@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Agent;
-import com.mygdx.game.Assets;
+import com.mygdx.game.assets.Assets;
 
 /**
  * This UI component uses information about an agent and is used in a list of players in the party.

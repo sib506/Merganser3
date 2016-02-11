@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.Agent;
-import com.mygdx.game.Assets;
+import com.mygdx.game.assets.Assets;
 
 /**
  * A menu that shows the statistics of an agent.
