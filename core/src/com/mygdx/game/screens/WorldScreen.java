@@ -43,7 +43,7 @@ public class WorldScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         update(delta);
-        game.objectiveManager.checkObjectives();
+        game.objectiveManager.checkNumCompleteObjectives();
         worldRenderer.render();
     }
 

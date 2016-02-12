@@ -47,7 +47,6 @@ public class BobNPC extends NPC {
             uiManager.addNotification("You talked to Bob! You got 40 points!");
             level.characters.add(new EvilNPC(level, new Vector2(152, 123)));
             gameWorld.game.objectiveManager.completeObjective("Bob");
-            gameWorld.game.objectiveManager.gameObjectives.remove("Bob");
             gameWorld.game.objectiveManager.addObjective("RoboDuck2", new Objective("Defeat RoboDuck Mk2 near Langwith", 100, "100 Points", false));
             
             Game.party.addConsumable(0);

@@ -49,7 +49,6 @@ public class RoboNPC extends NPC {
         	uiManager.addNotification("Talk to Bob by TFTV ");
         	gameWorld.game.objectiveManager.addObjective("Bob", new Objective("Talk to Bob by TFTV", 40, "40 Points", false));
         	gameWorld.game.objectiveManager.completeObjective("RoboDuck");
-        	gameWorld.game.objectiveManager.gameObjectives.remove("RoboDuck");
         }
         else{
         	uiManager.addNotification("You needed to talk to Sally! No points for you!");

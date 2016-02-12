@@ -46,7 +46,6 @@ public class EvilNPC extends NPC {
         uiManager.addNotification("'ERROR: UNEXPECTED DEFEAT ON LINE 93'");
         uiManager.addNotification("You defeated the RoboDuck MK II! You got 150 points!");
         gameWorld.game.objectiveManager.completeObjective("RoboDuck2");
-        gameWorld.game.objectiveManager.gameObjectives.remove("RoboDuck2");
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
