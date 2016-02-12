@@ -69,8 +69,8 @@ public class ObjectiveManager {
 	 */
 	public void completeObjective(String key){
 		gameObjectives.get(key).setComplete(true);
-		gameObjectives.remove(key);
 		Game.pointsScore += gameObjectives.get(key).getAddScore();
+		gameObjectives.remove(key);
 		objectivesComplete++;
 	}
 
