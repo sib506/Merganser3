@@ -49,7 +49,7 @@ public class EvilNPC extends NPC {
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
-        BattleParameters params = new BattleParameters(0);
+        BattleParameters params = new BattleParameters(4);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
         Agent enemyDuck = new Agent("RoboDuck MK II", Agent.AgentType.ENEMY,new Statistics(300,500,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
