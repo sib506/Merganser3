@@ -1,4 +1,4 @@
-package com.mygdx.game.tests;
+package com.mygdx.game.desktop.tests;
 
 //import org.mockito.Mockito.*;
 import static org.mockito.Mockito.mock;

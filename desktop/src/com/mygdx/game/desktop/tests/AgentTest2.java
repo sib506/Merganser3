@@ -1,4 +1,4 @@
-package com.mygdx.game.tests;
+package com.mygdx.game.desktop.tests;
 
 import java.util.ArrayList;
 

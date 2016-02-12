@@ -40,6 +40,7 @@ public class Game extends com.badlogic.gdx.Game {
 	private WinScreen gameWinScreen;
 
 	public boolean wonBattle;
+	public boolean created;
 
 
 	@Override
@@ -48,6 +49,7 @@ public class Game extends com.badlogic.gdx.Game {
 		Assets.load();
 		wonBattle = false;
 		setScreen(new StartScreen(this));
+		this.created = true;
 	}
 
 	/**
