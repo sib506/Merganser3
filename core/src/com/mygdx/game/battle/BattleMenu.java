@@ -1,6 +1,7 @@
 package com.mygdx.game.battle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
@@ -368,11 +369,15 @@ public class BattleMenu {
             case LEFT:{
                 if(skillMenuPointer!=0)
                     skillMenuPointer-=1;
+                System.out.println("Pointer: " + skillMenuPointer);
+                System.out.println("MaxPointer Size: " + (skillMenu.size()-1));
                 break;
             }
             case RIGHT:{
                 if(skillMenuPointer!=skillMenu.size()-1 )
                     skillMenuPointer+=1;
+                System.out.println("Pointer: " + skillMenuPointer);
+                System.out.println("MaxPointer Size: " + (skillMenu.size()-1));
                 break;
             }
 		default:
@@ -407,11 +412,15 @@ public class BattleMenu {
             case LEFT:{
                 if(itemMenuPointer!=0 && !itemMenu.isEmpty())
                     itemMenuPointer-=1;
+                System.out.println("Pointer: " + itemMenuPointer);
+                System.out.println("MaxItemMenu Pointer: " + (itemMenu.size()-1));
                 break;
             }
             case RIGHT:{
                 if(itemMenuPointer!=itemMenu.size()-1 && !itemMenu.isEmpty())
                     itemMenuPointer+=1;
+                System.out.println("Pointer: " + itemMenuPointer);
+                System.out.println("MaxItemMenu Pointer: " + (itemMenu.size()-1));
                 break;
             }
 		default:
@@ -478,21 +487,33 @@ public class BattleMenu {
             case RIGHT:{
                 if(targetMenuPointerColumn==0 && battleLayout[targetMenuPointerRow][targetMenuPointerColumn+1]!=-1)
                     targetMenuPointerColumn+=1;
+                System.out.println(Arrays.deepToString(battleLayout));
+                System.out.println("Column:" + targetMenuPointerColumn);
+                System.out.println("Row:" + targetMenuPointerRow);
                 break;
             }
             case LEFT:{
                 if(targetMenuPointerColumn==1 && battleLayout[targetMenuPointerRow][targetMenuPointerColumn-1]!=-1)
                     targetMenuPointerColumn-=1;
+                System.out.println(Arrays.deepToString(battleLayout));
+                System.out.println("Column:" + targetMenuPointerColumn);
+                System.out.println("Row:" + targetMenuPointerRow);
                 break;
             }
             case UP:{
                 if(targetMenuPointerRow!=0 && battleLayout[targetMenuPointerRow-1][targetMenuPointerColumn]!=-1)
                     targetMenuPointerRow-=1;
+                System.out.println(Arrays.deepToString(battleLayout));
+                System.out.println("Column:" + targetMenuPointerColumn);
+                System.out.println("Row:" + targetMenuPointerRow);
                 break;
             }
             case DOWN:{
                 if(targetMenuPointerRow!=battleLayout.length-1 && battleLayout[targetMenuPointerRow+1][targetMenuPointerColumn]!=-1)
                     targetMenuPointerRow+=1;
+                System.out.println(Arrays.deepToString(battleLayout));
+                System.out.println("Column:" + targetMenuPointerColumn);
+                System.out.println("Row:" + targetMenuPointerRow);
                 break;
             }
 		default:

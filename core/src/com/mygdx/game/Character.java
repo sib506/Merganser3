@@ -240,10 +240,13 @@ public abstract class Character {
     public void updateSpeed(){
     	if(isFlying()){
     		transitionSpeed = 0.05f;
+    		System.out.println("Speed 0.05f");
     	}else if (isSwimming){
     		transitionSpeed = 0.1f;
+    		System.out.println("Speed 0.1f");
     	}else{
     		transitionSpeed = 0.25f;
+    		System.out.println("Speed 0.25f");
     	}
     }
 

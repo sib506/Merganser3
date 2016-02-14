@@ -6,7 +6,8 @@ public class AssetCreationTests extends AssetTestCase {
 		super.setUp();
 	}
 
-	public void testInit() {
+	// Tests whether assets successfully finished loading
+	public void testAssetInit() {
 		assertTrue(game.created);
 	}
 

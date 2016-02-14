@@ -36,6 +36,7 @@ public class BattleAnimatorTest extends TestCase {
 		testAgent1.setY(valueY);
 	}
 	
+	// Test whether agent has moved by the correct amount
 	public void testUpdate(){
 		testAnimator.moveAgentTo(testAgent1, 0.5f, 2.6f, testItem);
 		testAnimator.update(0);
@@ -43,8 +44,10 @@ public class BattleAnimatorTest extends TestCase {
 		assertEquals(89.74737f, testAgent1.getY());
 	}
 	
+	// Tests that with multiple updates the agent never goes past the location where it wants to be
 	public void testMultipleUpdate(){
 		testAnimator.moveAgentTo(testAgent1, 0.5f, 2.6f, testItem);
+		testAnimator.update(0);
 		testAnimator.update(0);
 		testAnimator.update(0);
 		testAnimator.update(0);
@@ -58,6 +61,7 @@ public class BattleAnimatorTest extends TestCase {
 		assertEquals(2.6f, testAgent1.getY());
 	}
 	
+	// Checks that returning the agent returns correctly to starting location
 	public void testReturnAgent(){
 		testAnimator.moveAgentTo(testAgent1, 55.3f, 26f, testItem);
 		testAnimator.update(0);

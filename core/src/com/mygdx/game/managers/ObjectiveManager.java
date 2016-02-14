@@ -89,11 +89,11 @@ public class ObjectiveManager {
 		if (Game.pointsScore >= 200 && gameObjectives.containsKey("200Points")) {
 			addObjective("400Points", new Objective("Reach 400 points", 0, "Mystery reward", true));
 			completeObjective("200Points");
-			ObjectiveNotification("You have over 200 points. Objective completed.");
+//			ObjectiveNotification("You have over 200 points. Objective completed.");
 		}
 		else if (Game.pointsScore >= 400 && gameObjectives.containsKey("400Points")){
 			completeObjective("400Points");
-			ObjectiveNotification("You have over 400 points. Objective completed.");
+//			ObjectiveNotification("You have over 400 points. Objective completed.");
 		}
 	}
 
@@ -119,7 +119,7 @@ public class ObjectiveManager {
 	 */
 	public void check3Objective() {
 		if (objectivesComplete == 3 && !complete3) {
-			ObjectiveNotification("You have completed 3 objectives. Have some new skills!");
+//			ObjectiveNotification("You have completed 3 objectives. Have some new skills!");
 			addObjective("6Obj", new Objective("Complete 6 objectives", 0, "Mystery reward", true));
 			completeObjective("3Obj");
 			Game.party.getMember(0).addSkill(9);
@@ -135,7 +135,7 @@ public class ObjectiveManager {
 	 */
 	public void check6Objective() {
 		if (objectivesComplete == 6 && !complete6) {
-			ObjectiveNotification("You have completed 6 objectives. Have some new skills!");
+//			ObjectiveNotification("You have completed 6 objectives. Have some new skills!");
 			completeObjective("6Obj");
 			Game.party.getMember(0).addSkill(13);
 			Game.party.getMember(1).addSkill(14);
