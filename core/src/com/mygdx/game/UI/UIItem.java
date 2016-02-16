@@ -11,6 +11,8 @@ import com.mygdx.game.assets.Assets;
 
 /**
  * The skill menu is part of the party menu and show information about a particular skill.
+ * 
+ * Class added for assessment 3
  */
 public class UIItem extends UIComponent {
 
