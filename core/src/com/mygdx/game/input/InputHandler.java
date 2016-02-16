@@ -17,7 +17,9 @@ public class InputHandler {
     private static Boolean leftPressed = false;
     private static Boolean actPressed = false;
     private static Boolean escPressed = false;
+    //ASSESSMENT 3 change (11)
     private static Boolean oPressed = false;
+    //ASSESSMENT 3 change
     private static Boolean mPressed = false;
     private static Boolean shiftPressed = false;
 
@@ -27,9 +29,11 @@ public class InputHandler {
     private static Boolean leftJustPressed = false;
     private static Boolean actJustPressed = false;
     private static Boolean escJustPressed = false;
+    //ASSESMENT 3 change (11)
     private static Boolean OJustPressed = false;
     private static Boolean MJustPressed = false;
     private static Boolean shiftJustPressed = false;
+    //END assesment 3 change
 
     private static final int UP = Input.Keys.W;
     private static final int DOWN = Input.Keys.S;
@@ -37,9 +41,12 @@ public class InputHandler {
     private static final int RIGHT = Input.Keys.D;
     private static final int ACT = Input.Keys.E;
     private static final int ESC = Input.Keys.Q;
+    //ASSESSMENT 3 change
     private static final int O = Input.Keys.O;
     private static final int M = Input.Keys.M;
     private static final int SHIFT = Input.Keys.SHIFT_LEFT;
+    //END ASSESSMENT 3 change
+
 
     /**
      * Updates and polls to see which inputs are active.
@@ -100,6 +107,7 @@ public class InputHandler {
                 escJustPressed = true;
             }
             
+            //ASSESSMENT 3 change (11)
             oPressed = false;
             OJustPressed = false;
             if (Gdx.input.isKeyPressed(O)) {
@@ -126,6 +134,7 @@ public class InputHandler {
             if (Gdx.input.isKeyJustPressed(SHIFT)) {
             	shiftJustPressed = true;
             }
+            //END ASSESSMENT 3 change
         }
     }
 
