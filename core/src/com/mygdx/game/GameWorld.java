@@ -183,6 +183,10 @@ public class GameWorld {
         game.newBattle(battleParams);
     }
 
+    /**
+     * Function gets the index of the location image from the current location string
+     * ASSESSMENT 3 change (16)
+     */
     private int getBackgroundFromLocation(){
     	switch (Game.currentLocation){
     	case "The Catalyst":
