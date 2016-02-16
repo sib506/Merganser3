@@ -1,5 +1,5 @@
 package com.mygdx.game;
-
+//ASSESSMENT 3 DELETION (5)
 import java.util.Arrays;
 
 /**
