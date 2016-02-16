@@ -448,6 +448,8 @@ public class BattleMenu {
      * Uses the given input to update the targeting system.
      * Uses the battleLayout 2D array and row and column pointers.
      * You cannot wrap around the screen i.e. pressing left in the leftmost column won't select the rightmost column.
+     * 
+     * function modified in assessment 3
      */
     private void targetingMenuInput(InputHandler.inputType input){
     	Agent currentAgent = battleScreen.getCurrentTurnAgent();
