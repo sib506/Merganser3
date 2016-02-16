@@ -40,7 +40,9 @@ public class GameWorld {
         battleChance = 2000;
         level.characters.add(new SallyNPC(level, new Vector2(108, 91)));
         uiManager.addUIComponent(new UIScore());
+        //ASSESSMENT 3 change (13)
         uiManager.addUIComponent(new UICurrentLocation());
+        //END ASSESSMENT 3
         battleParams = new BattleParameters(0);
         List<Integer> emptyList = new ArrayList<Integer>();
         Agent enemyDuck = new Agent("Crazed Duck", Agent.AgentType.ENEMY,new Statistics(100,100,0,2,2,2,2,2,3),emptyList,new CurrentEquipment(0,0,0,0,0),0);
