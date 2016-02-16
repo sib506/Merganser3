@@ -1,5 +1,5 @@
 package com.mygdx.game;
-
+//ASSESSMENT 3 DELITION (5)
 public class Consumable{
 
     private int ID = -1;
