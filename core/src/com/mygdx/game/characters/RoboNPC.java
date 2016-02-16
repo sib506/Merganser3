@@ -25,7 +25,9 @@ public class RoboNPC extends NPC {
     public RoboNPC(Level level, Vector2 currentTile) {
         super(level, currentTile);
         messages = new String[2];
+        //ASSESSMENT 3 change(11)
         messages[0] = "01010000 01001100 01000101 01000001 01010011 01000101 00100000 01001000 01000101 01001100 01010000 00100000 01001101 01000101 00001101 00001010!!!";
+        //END ASSESMENT 3 change
         messages[1] = "Robo duck has challenged you to a battle.";
     }
 
@@ -43,7 +45,7 @@ public class RoboNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         Assets.sfx_battleStart.play(Game.masterVolume);
-        
+        //ASSESSMENT 3 change(11)
         if(gameWorld.game.objectiveManager.gameObjectives.containsKey("RoboDuck")){
         	uiManager.addNotification("You defeated Roboduck! You got 100 points!");
         	uiManager.addNotification("Talk to Bob by TFTV ");
@@ -57,6 +59,7 @@ public class RoboNPC extends NPC {
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
+        //END ASSESSMENT 3 change
         BattleParameters params = new BattleParameters(8);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
