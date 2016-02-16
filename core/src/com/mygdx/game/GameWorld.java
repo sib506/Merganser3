@@ -102,6 +102,7 @@ public class GameWorld {
                         gameState = GameState.PARTY_MENU;
                     }
                 }
+                //ASSESSMENT 3 change (12)
                 else
                     if (InputHandler.isOJustPressed()) {
                         interactingNPC = level.player.interactingNPC;
@@ -114,6 +115,7 @@ public class GameWorld {
                             gameState = GameState.OBJECTIVE_MENU;
                         }
                     }
+                    //END ASSESSMENT 3 change
                     else if (InputHandler.isMJustPressed()){
                     	interactingNPC = level.player.interactingNPC;
                         level.stopInput = true;
@@ -132,13 +134,13 @@ public class GameWorld {
                     gameState = GameState.FREEROAM;
                 }
                 break;
-                
+            //ASSESSMENT 3 change (12)
             case OBJECTIVE_MENU:
                 if (!uiManager.updateObjectiveMenu(delta)){
                     gameState = GameState.FREEROAM;
                 }
                 break;
-
+            //END ASSESSMENT 3 change
             case MAP:
             	 if (!uiManager.updateMap(delta)){
                      gameState = GameState.FREEROAM;
