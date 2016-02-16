@@ -21,6 +21,18 @@ public class ObjectiveManagerTest extends AssetTestCase{
 		assertTrue(game.objectiveManager.gameObjectives.containsKey("testObj"));
 	}
 	
+	// tests that objective correctly completes when reaching 10 battles won
+	public void testCompleteBattle10(){
+		for (int i=0; i<9; i++){
+			game.objectiveManager.battleWon();	
+		}
+		assertTrue(game.objectiveManager.gameObjectives.containsKey("10Batt"));
+		game.objectiveManager.battleWon();
+		assertFalse(game.objectiveManager.gameObjectives.containsKey("10Batt"));
+		game.objectiveManager.battleWon();
+		assertFalse(game.objectiveManager.gameObjectives.containsKey("10Batt"));
+	}
+	
 	// Tests objective when complete increases game score, updates completed objectives and removes correctly
 	public void testCompleteObjective(){
 		int pointsBeforeObj = Game.pointsScore;
