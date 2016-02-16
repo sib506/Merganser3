@@ -9,6 +9,8 @@ import com.mygdx.game.UI.UIManager;
 
 /**
  * This class represents the first npc of the game.
+ * 
+ * Class produced for assessment 3
  */
 public class BobNPC extends NPC {
 
