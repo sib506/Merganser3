@@ -1,3 +1,4 @@
+//Game references removed in assessment 3
 package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
