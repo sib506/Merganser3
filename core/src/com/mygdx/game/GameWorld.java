@@ -155,12 +155,14 @@ public class GameWorld {
             case BATTLE:
                 if (game.wonBattle) {
                     uiManager.addNotification("You won the battle!");
+                    //ASSESSMENT 3 chnages (10)
 //                    game.objectiveManager.battleWon(uiManager);
                 } else {
 //                    Game.party.setHealths(1);
 //                    level.player.setCurrentTile(new Vector2(118, 94));
                     uiManager.addNotification("You lost the battle!");
                     game.newGameOverScreen();
+                    //END ASSESSMENT 3 changes
                 }
                 gameState = GameState.FREEROAM;
                 break;
