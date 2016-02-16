@@ -25,9 +25,11 @@ public class UIPartyMenu extends UIComponent {
 
     private List<UIPlayer> playerList;
     
+    //ASSESSMENT 3 change (5)
     private UIMessageBox statsDisplay = new UIMessageBox("STATS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2, (y + height + 4), width/6, 0, 10);
     private UIMessageBox skillsDisplay = new UIMessageBox("SKILLS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/6, (y + height +4), width/6, 0, 10);
     private UIMessageBox itemDisplay = new UIMessageBox("ITEMS", Assets.consolas22, Color.LIGHT_GRAY, Align.center, x+width/2+width/3, (y + height+4), width/6, 0, 10);
+    //END ASSESSMENT 3 change
 
     public UIPartyMenu(float x, float y, float width, float height, PartyManager party) {
         super(x, y, width, height);
@@ -48,10 +50,11 @@ public class UIPartyMenu extends UIComponent {
     public void render(SpriteBatch batch, NinePatch patch) {
 
         if (show) {
-
+            //ASSESSMENT 3 change (5)
         	statsDisplay.setColour(Color.LIGHT_GRAY);
         	skillsDisplay.setColour(Color.LIGHT_GRAY);
         	itemDisplay.setColour(Color.LIGHT_GRAY);
+
         	
             new UIMessageBox("", Assets.consolas22, Color.WHITE, Align.center, x, y, width, height).render(batch, patch);
             for (int i=0;i<playerList.size();i++) {
@@ -84,7 +87,7 @@ public class UIPartyMenu extends UIComponent {
             statsDisplay.render(batch, patch);
             skillsDisplay.render(batch, patch);
             itemDisplay.render(batch, patch);
-
+        	//END ASSESSMENT 3 change (5)
         }
     }
 
