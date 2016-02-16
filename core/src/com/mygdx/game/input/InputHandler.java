@@ -212,6 +212,8 @@ public class InputHandler {
 
     /**
      * Disables all input updating and sets inputs to false.
+     * 
+     * Updated to comply with assessment 3
      */
     public static void disableAllInput(){
         isInputEnabled=false;
