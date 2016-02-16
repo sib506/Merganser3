@@ -46,10 +46,12 @@ public class EvilNPC extends NPC {
         Assets.sfx_battleStart.play(Game.masterVolume);
         uiManager.addNotification("'ERROR: UNEXPECTED DEFEAT ON LINE 93'");
         uiManager.addNotification("You defeated the RoboDuck MK II! You got 150 points!");
+        //ASSESSMENT 3 change (17)
         gameWorld.game.objectiveManager.completeObjective("RoboDuck2");
 //        Game.objectivesComplete += 1;
 //        Game.objectives[1] = true;
 //        Game.pointsScore += 100;
+        //END ASSESSMENT 3 changes
         BattleParameters params = new BattleParameters(4);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
