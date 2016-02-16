@@ -44,6 +44,7 @@ public class Consumable{
         return power;
     }
     
+    //added getter for assessment 3
     public int getID(){
     	return ID;
     }
