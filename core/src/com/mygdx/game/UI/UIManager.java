@@ -17,7 +17,9 @@ import com.mygdx.game.managers.PartyManager;
  */
 public class UIManager {
     public UIPartyMenu partyMenu;
+    //ASSESSMENT 3 change (11)
     public UIObjectives objectives;
+    //END ASSESSMENT 3 change
     public UIMap map;
     public List<UIMessageBox> notifications;
 
@@ -33,8 +35,10 @@ public class UIManager {
         uiComponents = new ArrayList<UIComponent>();
         this.level = level;
         partyMenu = new UIPartyMenu(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, party);
+        //ASSESSMENT 3 changes (11,14)
         objectives = new UIObjectives(40, 150, Gdx.graphics.getWidth()-80, Gdx.graphics.getHeight()-320, obj);
         map = new UIMap(85, 50, Gdx.graphics.getWidth()-170, Gdx.graphics.getHeight()-165, level);
+        //END ASSESSMENT 3
 
     }
 
@@ -53,6 +57,7 @@ public class UIManager {
         return partyMenu.update(delta);
     }
     
+    //ASSESSMENT 3 changes (11,14)
     /**
      * Opens the objectives menu.
      */
@@ -83,7 +88,9 @@ public class UIManager {
     public boolean updateMap(float delta){
     	return map.update(delta);
     }
-
+    //END ASSESSMENT 3 changes
+    
+    
     /**
      * Creates a new dialogue from an array of messages.
      */
