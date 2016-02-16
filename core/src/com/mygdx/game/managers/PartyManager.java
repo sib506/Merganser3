@@ -112,6 +112,10 @@ public class PartyManager {
         return consumables;
     }
     
+    /**
+     * function to remove consumables as they get consummed
+     * added for assessment 3
+     */
     public void removeConsumable(int id){
     	for (int i = 0; i<consumables.size(); i++){
     		if(consumables.get(i) == id){
@@ -141,7 +145,10 @@ public class PartyManager {
             partyList.get(i).dealHealth(x);
         }
     }
-
+	/**
+	 * adds a consumable refernce to the list of consumables
+	 * function added for assessment 3
+	 */
 	public void addConsumable(int id) {
 		consumables.add(id);
 		
