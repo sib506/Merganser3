@@ -27,13 +27,15 @@ public class Game extends com.badlogic.gdx.Game {
 	public static ItemManager items;
 	public static SkillManager skills;
 	private static JsonLoader jsonLoader = new JsonLoader();
-	
+
 	public static int pointsScore=0;
+	//ASSESSMENT 3 change (11)
 	public static String currentLocation = "";
 	public ObjectiveManager objectiveManager = new ObjectiveManager(this);
-
+	//END ASSESSMENT 3 change
 	public static float masterVolume = 0.1f;
 
+	
 	private WorldScreen worldScreen;
 	private BattleScreen battleScreen;
 	private EndScreen gameOverScreen;
