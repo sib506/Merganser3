@@ -44,6 +44,7 @@ public class SallyNPC extends NPC {
     @Override
     public void action(GameWorld gameWorld) {
         if (!doneInteraction) {
+            //ASSESSMENT 3 changes (11)
             uiManager.addNotification("You talked to Sally! You got 40 points!");
             level.characters.add(new RoboNPC(level, new Vector2(75, 98)));
             gameWorld.game.objectiveManager.completeObjective("Sally");
@@ -62,6 +63,7 @@ public class SallyNPC extends NPC {
 //            Game.objectives[0] = true;
             doneInteraction = true;
             level.characters.remove(this);
+            //END ASSESSMENT 3 changes
         }
     }
 }
