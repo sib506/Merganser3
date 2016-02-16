@@ -16,6 +16,7 @@ import com.mygdx.game.battle.BattleParameters;
 
 /**
  * This class represents the vampire boss of the game.
+ * ASSESSMENT 3 addition (17)
  */
 public class EvilNPC extends NPC {
 
