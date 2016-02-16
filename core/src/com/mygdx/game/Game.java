@@ -28,8 +28,8 @@ public class Game extends com.badlogic.gdx.Game {
 	public static SkillManager skills;
 	private static JsonLoader jsonLoader = new JsonLoader();
 
-	public static int pointsScore=0;
 	//ASSESSMENT 3 change (11)
+	public static int pointsScore=0;
 	public static String currentLocation = "";
 	public ObjectiveManager objectiveManager = new ObjectiveManager(this);
 	//END ASSESSMENT 3 change
@@ -123,8 +123,9 @@ public class Game extends com.badlogic.gdx.Game {
 		setScreen(gameWinScreen);
 		
 	}
-	
+	//ASSESSMENT 3 change (MULX)
 	public WorldScreen getWorldScreen(){
 		return worldScreen;
 	}
+	//END ASSESSMENT 3 change
 }
