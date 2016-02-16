@@ -1,3 +1,5 @@
+//Imports cleaned in ASSESSMENT 3 (5)
+
 package com.mygdx.game.screens;
 
 import com.badlogic.gdx.ScreenAdapter;
