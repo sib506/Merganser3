@@ -17,8 +17,9 @@ import com.mygdx.game.input.InputHandler;
  * Character behaviour must be implemented before use.
  */
 public abstract class Character {
-
+    //ASSESSMENT 3 change (15)
     public float transitionSpeed = 0.25f;
+    //END ASSESSMENT 3 change
     public final float WAIT_PERIOD = 0.15f;
 
     public static final Vector2 CHARACTER_SIZE = new Vector2(13,21);
@@ -38,7 +39,7 @@ public abstract class Character {
 
     private float stateTime;
     protected float waitTime;
-    
+    //ASSESSMENT 3 ADDED LINE
     protected boolean isSwimming = false;
 
 //  Map information for collision detection.
@@ -70,11 +71,13 @@ public abstract class Character {
      * @param delta The time since the last frame was rendered.
      */
     public void update(float delta) {
+        //ASSESSMENT 3 change (13)
     	if(this instanceof Player) {
 //    		System.out.println("Before: " + Game.currentLocation);
     		Game.currentLocation = level.locationMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
 //        	System.out.println("After: " + Game.currentLocation);
     	}
+    	//END ASSESSMENT 3 change
     	
         if (level.stopInput){
 
@@ -107,6 +110,7 @@ public abstract class Character {
 
     /**
      * Helper method that determines if a character can move to a particular position in the level.
+     * Function modified in assessment 3
      * @param requestedDirection The time since the last frame was rendered.
      */
     protected void updateMovement(Direction requestedDirection) {
@@ -233,15 +237,23 @@ public abstract class Character {
         }
     }
 
+    /**
+     * function added for ASSESSMENT 3
+     * 
+     */
     public boolean isSwimming(){
     	return isSwimming;
     }
     
+    /**
+     * function ADDED for ASSESSMENT 3
+     */
     public boolean isFlying(){
     	InputHandler.update();
         return InputHandler.isShiftPressed();
     }
     
+    //function added for assessment 3
     public void updateSpeed(){
     	if(isFlying()){
     		transitionSpeed = 0.05f;
