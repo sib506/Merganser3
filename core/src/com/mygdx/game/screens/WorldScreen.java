@@ -58,9 +58,10 @@ public class WorldScreen extends ScreenAdapter {
     public void dispose() {
         worldRenderer.dispose();
     }
-    
+    //ASSESSMENT 3 change (11)
     public GameWorld getGameWorld(){
     	return gameWorld;
     }
+    //END ASSESSMENT 3 change
 }
 
