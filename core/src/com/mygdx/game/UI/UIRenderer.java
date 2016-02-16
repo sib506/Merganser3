@@ -39,7 +39,9 @@ public class UIRenderer {
                 uiManager.notifications.get(0).render(uiBatch, Assets.patch);
         }
         uiManager.partyMenu.render(uiBatch, Assets.patch);
+        //ASSESSMENT 3 change (11)
         uiManager.objectives.render(uiBatch, Assets.patch);
+        //END ASSESSMENT 3 change
         uiManager.map.render(uiBatch, Assets.patch);
         uiBatch.end();
     }
