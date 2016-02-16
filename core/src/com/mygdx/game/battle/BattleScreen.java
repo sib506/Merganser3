@@ -78,7 +78,7 @@ public class BattleScreen extends ScreenAdapter {
 
 
         //Initialise the size of the battlemenu menus
-        System.out.println(Game.party.getConsumables().size());
+        //System.out.println(Game.party.getConsumables().size());
         battleMenu.setItemMenuSize(Game.party.getConsumables().size());
         battleMenu.updateBattleLayout();
 
