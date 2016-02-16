@@ -32,10 +32,12 @@ public class Assets {
     public static Texture dialoguePointer;
     public static Texture worldMap;
 
+    //ASSESSMENT 3 change
     private static final int PLAYER_SHEET_COLS = 4;
     private static final int PLAYER_SHEET_ROWS = 2;
     private static final int NPC_WALKSHEET_COLS = 4;
     private static final int NPC_WALKSHEET_ROWS = 2;
+    //end ASSESSMENT 3 change
 
     //  CHARACTER TEXTURE SHEETS
     public static Animation[] playerWalkAnimation;
@@ -140,7 +142,7 @@ public class Assets {
         worldMusic.setLooping(true);
 
 
-
+        //ASSESSMENT 3 change
         //  CHARACTER TEXTURE SHEETS
         shadow = new Texture("shadow.png");
 
@@ -202,7 +204,7 @@ public class Assets {
             playerFlyAnimation[x] = new Animation(0.175f, flyFrameDirections[x]);
             playerFlyAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
         }
-        
+        //end ASSESSMENT 3 change
 
         SallyNPCWalkSheet = new Texture("EvilDuckAnimationFrames.png");
         tmp = TextureRegion.split(SallyNPCWalkSheet, SallyNPCWalkSheet.getWidth() / NPC_WALKSHEET_COLS, SallyNPCWalkSheet.getHeight() / NPC_WALKSHEET_ROWS);
@@ -251,6 +253,7 @@ public class Assets {
         playerTexture.dispose();
         playerTexture.dispose();
         battleTurnPointer.dispose();
+        //Line added for assessment 3
         worldMap.dispose();
         mapTexture.dispose();
         consolas22.dispose();
