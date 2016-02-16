@@ -1,3 +1,6 @@
+/*
+gameworld refernces removed in assessment 3
+*/
 package com.mygdx.game;
 
 import java.util.ArrayList;
