@@ -1,5 +1,8 @@
 package com.mygdx.game;
-
+/**
+ * class to handle objetives
+ * ASSESSMENT 3 addition (11)
+ */
 public class Objective {
 	private String description;
 	private boolean complete = false;
