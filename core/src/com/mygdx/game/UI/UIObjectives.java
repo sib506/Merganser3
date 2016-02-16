@@ -13,6 +13,8 @@ import com.mygdx.game.managers.ObjectiveManager;
 /**
  * The party menu allows the user to see information about each party member. It
  * contains a party member's skills and statistics.
+ * 
+ * Class added for assessment 3
  */
 public class UIObjectives extends UIComponent {
 
@@ -28,10 +30,10 @@ public class UIObjectives extends UIComponent {
 	float paddingX;
 	float paddingY;
 	int i;
-
+	
 	private UIMessageBox objectiveDisplay = new UIMessageBox("OBJECTIVES", Assets.consolas22, Color.WHITE, Align.center,
 			x, (y + height + 4), width, 0, 10);
-
+	
 	public UIObjectives(float x, float y, float width, float height, ObjectiveManager obj) {
 		super(x, y, width, height);
 		this.obj = obj;
