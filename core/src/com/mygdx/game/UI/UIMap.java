@@ -13,6 +13,8 @@ import com.mygdx.game.input.InputHandler;
 /**
  * The party menu allows the user to see information about each party member. It
  * contains a party member's skills and statistics.
+ * 
+ * class added for assessment 3
  */
 public class UIMap extends UIComponent {
 
