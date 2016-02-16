@@ -17,11 +17,11 @@ public class InputHandler {
     private static Boolean leftPressed = false;
     private static Boolean actPressed = false;
     private static Boolean escPressed = false;
-    //ASSESSMENT 3 change (11)
+    //ASSESSMENT 3 change (11,15)
     private static Boolean oPressed = false;
-    //ASSESSMENT 3 change
     private static Boolean mPressed = false;
     private static Boolean shiftPressed = false;
+    //ASSESSMENT 3 change
 
     private static Boolean upJustPressed = false;
     private static Boolean downJustPressed = false;
@@ -29,7 +29,7 @@ public class InputHandler {
     private static Boolean leftJustPressed = false;
     private static Boolean actJustPressed = false;
     private static Boolean escJustPressed = false;
-    //ASSESMENT 3 change (11)
+    //ASSESMENT 3 change (11,15)
     private static Boolean OJustPressed = false;
     private static Boolean MJustPressed = false;
     private static Boolean shiftJustPressed = false;
@@ -41,7 +41,7 @@ public class InputHandler {
     private static final int RIGHT = Input.Keys.D;
     private static final int ACT = Input.Keys.E;
     private static final int ESC = Input.Keys.Q;
-    //ASSESSMENT 3 change
+    //ASSESSMENT 3 change (11,15)
     private static final int O = Input.Keys.O;
     private static final int M = Input.Keys.M;
     private static final int SHIFT = Input.Keys.SHIFT_LEFT;
@@ -107,7 +107,7 @@ public class InputHandler {
                 escJustPressed = true;
             }
             
-            //ASSESSMENT 3 change (11)
+            //ASSESSMENT 3 change (11,15)
             oPressed = false;
             OJustPressed = false;
             if (Gdx.input.isKeyPressed(O)) {
@@ -184,6 +184,7 @@ public class InputHandler {
     	return oPressed;
     }
     
+    //ASSESSMENT 3 change (11,15)
     public static Boolean isOJustPressed(){
     	return OJustPressed;
     }
@@ -203,10 +204,11 @@ public class InputHandler {
     public static Boolean isShiftJustPressed(){
     	return shiftJustPressed;
     }
-
+    
     public enum inputType{
         UP,DOWN,LEFT,RIGHT,ACT,ESC, O, M, SHIFT
     }
+    //END ASSESSMENT 3 change
 
     /**
      * Disables all input updating and sets inputs to false.
@@ -229,6 +231,7 @@ public class InputHandler {
         leftJustPressed = false;
         actJustPressed = false;
         escJustPressed = false;
+        //ASSESSMENT 3 change(11,15)
         OJustPressed = false;
         MJustPressed = false;
         shiftJustPressed = false;
