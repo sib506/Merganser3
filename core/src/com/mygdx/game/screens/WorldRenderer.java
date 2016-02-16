@@ -91,7 +91,7 @@ public class WorldRenderer {
                 }
                 
                 batch.draw(Assets.shadow, c.getAbsPos().x - textureOffset.x - 9, c.getAbsPos().y - textureOffset.y - 4);
-                
+                //ASSESSMENT 3 change (15)
                 if (c.isFlying()){
                 	if (c.getDirection() == Player.Direction.DOWN) {
                         batch.draw(Assets.playerFlyAnimation[2].getKeyFrame(c.getStateTime()), c.getAbsPos().x - textureOffset.x,
@@ -137,7 +137,7 @@ public class WorldRenderer {
                                 c.getAbsPos().y - textureOffset.y);
                     }
                 }
-                
+                //END ASSESSMENT 3 change
                 
             } else if (c instanceof SallyNPC || c instanceof BobNPC) {
                 if (c.getState() != Character.CharacterState.TRANSITIONING) {
