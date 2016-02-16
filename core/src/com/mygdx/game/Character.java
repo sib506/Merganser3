@@ -1,11 +1,16 @@
 package com.mygdx.game;
 
+//ASSESSMENT 3 change (5)
 import static com.mygdx.game.Level.TILE_SIZE;
+
+
 
 import java.util.Comparator;
 
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.input.InputHandler;
+
+//END ASSESSMENT 3
 
 /**
  * This abstract class represents a character in the Level.
