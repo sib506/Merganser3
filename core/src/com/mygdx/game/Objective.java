@@ -1,6 +1,6 @@
 package com.mygdx.game;
 /**
- * class to handle objetives
+ * Class to handle data for each objective
  * ASSESSMENT 3 addition (11)
  */
 public class Objective {
@@ -56,8 +56,5 @@ public class Objective {
 	public void setValueObjective(boolean valueObjective) {
 		this.valueObjective = valueObjective;
 	}
-	
-	
-	
 	
 }

@@ -13,10 +13,9 @@ import com.mygdx.game.input.InputHandler;
 import com.mygdx.game.managers.ObjectiveManager;
 
 /**
- * The party menu allows the user to see information about each party member. It
- * contains a party member's skills and statistics.
+ * The objective menu allows the user to see information about the current objectives
  * 
- * Class added for assessment 3
+ * NEW Class added for assessment 3 (11)
  */
 public class UIObjectives extends UIComponent {
 
@@ -46,7 +45,7 @@ public class UIObjectives extends UIComponent {
 	}
 
 	/**
-	 * Called once per frame to render the party menu.
+	 * Called once per frame to render the objectives menu.
 	 */
 	@Override
 	public void render(SpriteBatch batch, NinePatch patch) {
@@ -87,8 +86,7 @@ public class UIObjectives extends UIComponent {
 	}
 
 	/**
-	 * Called once per frame to handle input logic for selecting a player and
-	 * exiting the menu.
+	 * Called once per frame to handle input logic for exiting map
 	 * 
 	 * @return returns true if the dialogue box should continue to be displayed.
 	 */
@@ -103,6 +101,9 @@ public class UIObjectives extends UIComponent {
 
 	}
 
+	/**
+	 * Handles logic for input when selecting items on screen
+	 */
 	private void optionUpdate() {
 		if (InputHandler.isUpJustPressed()) {
 			playerSelected--;
@@ -122,6 +123,14 @@ public class UIObjectives extends UIComponent {
 			playerSelected = 0;
 	}
 
+	/**
+     * Helper function for render that actually does the text rendering.
+     * @param batch the spritebatch to use.
+     * @param message The string to add.
+     * @param x The x location.
+     * @param y The y location.
+     * @param color The colour to render the text as.
+     */
 	public void renderText(SpriteBatch batch, String message, float x, float y, Color color) {
 		GlyphLayout layout = new GlyphLayout(font, message, Color.BLACK, width - paddingX * 2, Align.left, false);
 

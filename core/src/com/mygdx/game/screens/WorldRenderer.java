@@ -1,5 +1,5 @@
 package com.mygdx.game.screens;
-
+// ASSESSMENT updated packages (change 7)
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -35,6 +35,7 @@ public class WorldRenderer {
 
     private Vector2 textureOffset = new Vector2(-2, 0);
 
+    // ASSESSMENT 3 CHANGE - 5
     //private float stateTime = 0;
 
     /**

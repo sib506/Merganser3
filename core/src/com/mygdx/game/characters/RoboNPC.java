@@ -56,9 +56,6 @@ public class RoboNPC extends NPC {
         	uiManager.addNotification("You needed to talk to Sally! No points for you!");
         }
         level.characters.add(new BobNPC(level, new Vector2(80, 83)));
-//        Game.objectivesComplete += 1;
-//        Game.objectives[1] = true;
-//        Game.pointsScore += 100;
         //END ASSESSMENT 3 change
         BattleParameters params = new BattleParameters(8);
         //Enemy ducks
@@ -66,8 +63,6 @@ public class RoboNPC extends NPC {
         //ASSESSMENT 3 change (17)
         Agent enemyDuck = new Agent("Robo Duck", Agent.AgentType.ENEMY,new Statistics(150,300,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
         //END ASSESSMENT 3 change
-//        enemyDuck.equipEquipment(0);
-//        enemyDuck.equipEquipment(1);
         enemyDuck.addSkill(4);
 
         params.addEnemy(enemyDuck);

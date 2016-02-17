@@ -57,7 +57,7 @@ public class Statistics {
     public  Statistics(){};
     
     //ASSESSMENT 3 changes (5)
-    public int increaseXP(int xp){//might need to return things when level up
+    public int increaseXP(int xp){
         int levelIncrease = 0;
         experience+=xp;
         levelIncrease = experience / maxExp; // assumes integer division

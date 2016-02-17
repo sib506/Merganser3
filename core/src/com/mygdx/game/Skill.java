@@ -1,5 +1,7 @@
 package com.mygdx.game;
 
+// Assessment 3 - Removed unused imports (change 6)
+
 /**
  * An individual skill, instantiated and stored in the SkillManager.
  * Implements Json.Serializable to allow objects to be easily generated.

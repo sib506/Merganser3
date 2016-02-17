@@ -10,9 +10,9 @@ import com.mygdx.game.Consumable;
 import com.mygdx.game.assets.Assets;
 
 /**
- * The skill menu is part of the party menu and show information about a particular skill.
+ * The item menu is part of the party menu and show information about party items.
  * 
- * Class added for assessment 3
+ * NEW Class added for assessment 3 (change 19)
  */
 public class UIItem extends UIComponent {
 
@@ -35,7 +35,7 @@ public class UIItem extends UIComponent {
     }
 
     /**
-     * Called once per frame to render the skill information.
+     * Called once per frame to render the item information.
      */
     @Override
     public void render(SpriteBatch batch, NinePatch patch) {

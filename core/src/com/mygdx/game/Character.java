@@ -1,6 +1,6 @@
 package com.mygdx.game;
 
-//ASSESSMENT 3 change (5)
+//ASSESSMENT 3 change (6)
 import static com.mygdx.game.Level.TILE_SIZE;
 
 
@@ -39,9 +39,11 @@ public abstract class Character {
 
     private float stateTime;
     protected float waitTime;
-    //ASSESSMENT 3 ADDED LINE
+    
+    //ASSESSMENT 3 ADDED LINE (15)
     protected boolean isSwimming = false;
-
+    //ASSESSMENT 3 END LINE
+    
 //  Map information for collision detection.
     protected Level level;
 
@@ -67,7 +69,7 @@ public abstract class Character {
     }
 
     /**
-     * Called once per frame to update character logic.
+     * Called once per frame to update character logic and current player location.
      * @param delta The time since the last frame was rendered.
      */
     public void update(float delta) {
@@ -114,7 +116,8 @@ public abstract class Character {
      * @param requestedDirection The time since the last frame was rendered.
      */
     protected void updateMovement(Direction requestedDirection) {
-        isSwimming = level.waterMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
+    	// Assessment 3 Change (15)
+    	isSwimming = level.waterMap[(int) getCurrentTile().x][(int) getCurrentTile().y];
     	updateSpeed();
     	if (getDirection() == requestedDirection) {
             switch (requestedDirection) {
@@ -238,22 +241,25 @@ public abstract class Character {
     }
 
     /**
-     * function added for ASSESSMENT 3
-     * 
+     * Function ADDED for ASSESSMENT 3
+     * Change 15
      */
     public boolean isSwimming(){
     	return isSwimming;
     }
     
     /**
-     * function ADDED for ASSESSMENT 3
+     * Function ADDED for ASSESSMENT 3 - Change 15
      */
     public boolean isFlying(){
     	InputHandler.update();
         return InputHandler.isShiftPressed();
     }
     
-    //function added for assessment 3
+    /**
+     * Function ADDED for ASSESSMENT 3 - Change 15
+     * Used to update speed depending on movement type
+     */
     public void updateSpeed(){
     	if(isFlying()){
     		transitionSpeed = 0.05f;

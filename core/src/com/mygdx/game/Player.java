@@ -1,6 +1,7 @@
 package com.mygdx.game;
-//ASSESSMENT 3 removed maps import
+//ASSESSMENT 3 removed maps import (change 6)
 import com.badlogic.gdx.math.Vector2;
+//ASSESSMENT 3 updated packages (change 7)
 import com.mygdx.game.characters.NPC;
 import com.mygdx.game.input.InputHandler;
 

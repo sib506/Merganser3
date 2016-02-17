@@ -1,5 +1,5 @@
 package com.mygdx.game;
-//ASSESSMENT 3 DELITION (5)
+// Imports - ASSESSMENT 3 DELITION (6)
 public class Consumable{
 
     private int ID = -1;
@@ -44,7 +44,7 @@ public class Consumable{
         return power;
     }
     
-    //added getter for assessment 3
+    //added getter for assessment 3 (19)
     public int getID(){
     	return ID;
     }

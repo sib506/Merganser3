@@ -1,5 +1,5 @@
 package com.mygdx.game.UI;
-
+//ASSESSMENT 3 updated packages (change 7)
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -94,7 +94,7 @@ public class UIMessageBox extends UIComponent {
         this.message = message;
     }
     
-    //Function added for assessment 3
+    //Function added for assessment 3 (change 5)
     public void setColour(Color colour){
     	this.color = colour;
     }

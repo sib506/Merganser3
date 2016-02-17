@@ -6,7 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Game;
 
 /**
- * Component for rendering the score display at the top right of the screen.
+ * NEW CLASS ASSESSMENT 3 (change 13)
+ * Component for rendering the current location at the bottom right of the screen.
  */
 public class UICurrentLocation extends UIComponent {
 
@@ -23,7 +24,7 @@ public class UICurrentLocation extends UIComponent {
     }
 
     /**
-     * Called once per frame to render the score.
+     * Called once per frame to render the location.
      */
     public void render(SpriteBatch batch, NinePatch patch){
         messageBox.setMessage(messagePrepend+Game.currentLocation);

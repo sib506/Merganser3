@@ -1,5 +1,5 @@
 package com.mygdx.game.assets;
-
+//ASSESSMENT updated packages (change 7)
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
@@ -21,6 +21,7 @@ public class Assets {
     public static Texture targetingPointer;
 
 //  MAP ASSETS
+    // ASSESSMENT 3 Change (16)
     public static Texture[] battleBGs = new Texture[11];
     public static Texture mapTexture;
 
@@ -32,7 +33,7 @@ public class Assets {
     public static Texture dialoguePointer;
     public static Texture worldMap;
 
-    //ASSESSMENT 3 change
+    //ASSESSMENT 3 change (15)
     private static final int PLAYER_SHEET_COLS = 4;
     private static final int PLAYER_SHEET_ROWS = 2;
     private static final int NPC_WALKSHEET_COLS = 4;
@@ -42,12 +43,16 @@ public class Assets {
     //  CHARACTER TEXTURE SHEETS
     public static Animation[] playerWalkAnimation;
     public static Texture playerWalkSheet;
-    
+  
+    //ASSESSMENT 3 change (15)
     public static Animation[] playerSwimAnimation;
     public static Texture playerSwimSheet;
+    //end ASSESSMENT 3 change
 
+    //ASSESSMENT 3 change (15)
     public static Animation[] playerFlyAnimation;
     public static Texture playerFlySheet;
+    //end ASSESSMENT 3 change
     
     public static Animation[] SallyNPCWalkAnimation;
     public static Texture SallyNPCWalkSheet;
@@ -102,6 +107,7 @@ public class Assets {
         targetingPointer = new Texture("targetingPointer.png");
 
         //  MAP ASSETS
+        // ASSESSMENT 3 Change (16)
         battleBGs[0] = new Texture("backgrounds/CS_centrefixed.png");
         battleBGs[1] = new Texture("backgrounds/LM_path.png");
         battleBGs[2] = new Texture("backgrounds/RCH_lake.png");
@@ -113,7 +119,7 @@ public class Assets {
         battleBGs[8] = new Texture("backgrounds/Catalyst.jpg");
         battleBGs[9] = new Texture("backgrounds/Goodricke.jpg");
         battleBGs[10] = new Texture("backgrounds/Lake.jpg");
-        
+        // ASSESSMENT 3 END
 
         mapTexture = new Texture("map.jpg");
 
@@ -123,7 +129,10 @@ public class Assets {
         atlas = new TextureAtlas(Gdx.files.internal("packedimages/pack.atlas"));
         patch = atlas.createPatch("knob2");
         dialoguePointer = new Texture("dialoguePointer.png");
+        
+        // ASSESSMENT 3 Change (14)
         worldMap = new Texture("campusMap.png");
+        // ASSESSMENT 3 END
 
         sfx_menuMove = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuMove.wav"));
         sfx_menuSelect = Gdx.audio.newSound(Gdx.files.internal("sound_effects/MenuSelect.wav"));
@@ -142,11 +151,11 @@ public class Assets {
         worldMusic.setLooping(true);
 
 
-        //ASSESSMENT 3 change
         //  CHARACTER TEXTURE SHEETS
         shadow = new Texture("shadow.png");
 
         playerWalkSheet = new Texture("DuckAnimationFrames.png");
+        // ASSESSMENT 3 Change (15)
         TextureRegion[][] tmp = TextureRegion.split(playerWalkSheet, playerWalkSheet.getWidth() / PLAYER_SHEET_COLS, playerWalkSheet.getHeight() / PLAYER_SHEET_ROWS);
         TextureRegion[][] walkFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
         int index = 0;
@@ -159,13 +168,15 @@ public class Assets {
                 }
             }
         }
+        
         playerWalkAnimation = new Animation[PLAYER_SHEET_COLS];
+     // ASSESSMENT 3 END
         for (int x = 0; x < walkFrameDirections.length;x++) {
             playerWalkAnimation[x] = new Animation(0.175f, walkFrameDirections[x]);
             playerWalkAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
         }
         
-        // Swimming
+        // Swimming - ASSESSMENT 3 Change (15)
         playerSwimSheet = new Texture("DuckSwimFrames.png");
         tmp = TextureRegion.split(playerSwimSheet, playerSwimSheet.getWidth() / PLAYER_SHEET_COLS, playerWalkSheet.getHeight() / PLAYER_SHEET_ROWS);
         TextureRegion[][] swimFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
@@ -185,7 +196,7 @@ public class Assets {
             playerSwimAnimation[x].setPlayMode(Animation.PlayMode.LOOP);
         }
         
-     // Fly
+     // Fly - ASSESSMENT 3 Change (15)
         playerFlySheet = new Texture("DuckFlyFrames.png");
         tmp = TextureRegion.split(playerFlySheet, playerFlySheet.getWidth() / PLAYER_SHEET_COLS, playerFlySheet.getHeight() / PLAYER_SHEET_ROWS);
         TextureRegion[][] flyFrameDirections = new TextureRegion[PLAYER_SHEET_COLS][PLAYER_SHEET_ROWS];
@@ -253,7 +264,7 @@ public class Assets {
         playerTexture.dispose();
         playerTexture.dispose();
         battleTurnPointer.dispose();
-        //Line added for assessment 3
+        //Line added for assessment 3 (14)
         worldMap.dispose();
         mapTexture.dispose();
         consolas22.dispose();

@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+// ASSESSMENT 3 UPDATE - Package Update (7, 10)
 import com.mygdx.game.assets.Assets;
 import com.mygdx.game.battle.BattleParameters;
 import com.mygdx.game.battle.BattleScreen;
@@ -38,8 +39,10 @@ public class Game extends com.badlogic.gdx.Game {
 	
 	private WorldScreen worldScreen;
 	private BattleScreen battleScreen;
+	// ASSESSMENT 3 change (10)
 	private EndScreen gameOverScreen;
 	private WinScreen gameWinScreen;
+	// END ASSESSMENT 3 change
 
 	public boolean wonBattle;
 	public boolean created;
@@ -107,7 +110,8 @@ public class Game extends com.badlogic.gdx.Game {
 	}
 	
 	/**
-	 * NEW METHOD: Switches from the current screen to the GameOver Screen
+	 * Assessment 3 Change (10)
+	 * NEW METHOD: Used when switching from the current screen to the GameOverScreen
 	 */
 	public void newGameOverScreen(){
 		gameOverScreen = new EndScreen(this);
@@ -116,7 +120,8 @@ public class Game extends com.badlogic.gdx.Game {
 	}
 	
 	/**
-	 * NEW METHOD: Switches from the current screen to the Game Win Screen
+	 * Asessement 3 Change (10)
+	 * NEW METHOD: Used when switching from current screen to Game Win Screen
 	 */
 	public void newWinScreen(){
 		gameWinScreen = new WinScreen(this);

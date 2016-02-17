@@ -1,5 +1,5 @@
 package com.mygdx.game.battle;
-
+//ASSESSMENT updated packages (change 7)
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +41,7 @@ public class BattleMenu {
     private float turnIndicatorX = 0, turnIndicatorY =0;//Locations of the turn indicator
     public boolean showTurnIndicator = false;
 
+    // ASSESSMENT 3 Update - Change 12, 14
     private UIManager battleUI = new UIManager(Game.party, null, null);//Stores the UI elements
     private UIRenderer uiRenderer = new UIRenderer(battleUI);
 
@@ -339,6 +340,7 @@ public class BattleMenu {
     }
 
     /**
+     * ASSESSMENT 3 - Change 2
      * Uses the given input to update the skillMenu based on a 2x2 grid system.
      * No menu wrapping is implemented e.g. pressing up when on the first element will not take you to the last element.
      * @param input the input to update the menu with.
@@ -383,6 +385,7 @@ public class BattleMenu {
     }
 
     /**
+     * ASSESSMENT 3 - Change 2
      * Uses the given input to update the itemMenu based on a 2x2 grid system.
      * No menu wrapping is implemented e.g. pressing up when on the first element will not take you to the last element.
      * @param input the input to update the menu with.
@@ -449,16 +452,18 @@ public class BattleMenu {
      * Uses the battleLayout 2D array and row and column pointers.
      * You cannot wrap around the screen i.e. pressing left in the leftmost column won't select the rightmost column.
      * 
-     * function modified in assessment 3
+     * function modified in assessment 3 - change 3 + 5
      */
     private void targetingMenuInput(InputHandler.inputType input){
+    	// ASSESSMENT 3 CHANGE 5
     	Agent currentAgent = battleScreen.getCurrentTurnAgent();
+    	// END CHANGE
         switch (input){
             case ACT:{
                 if(isSkillTargeting) {
                 	//if the current agent is friendly
                     if(currentAgent.getType()== Agent.AgentType.FRIENDLY){
-                    	//if the skill cost is greater than current agents MP
+                    	// ASSESSMENT 3 CHANGE 3 - if the skill cost is greater than current agents MP
                         if(currentAgent.getStats().getCurrentMP() < Game.skills.getSkill(skillOrItemID).getMPCost()){
                             createInfoBox(currentAgent.getName() + " does not have enough MP to use this skill", 3);
                             break;

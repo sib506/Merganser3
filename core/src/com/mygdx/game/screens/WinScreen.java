@@ -1,4 +1,3 @@
-//Game references removed in assessment 3
 package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
@@ -15,8 +14,8 @@ import com.mygdx.game.assets.Assets;
 import com.mygdx.game.input.InputHandler;
 
 /**
- * A simple screen that is used before the game world is loaded.
- * class added for assesment 3
+ * NEW CLASS ASSESSMENT 3 - Change 10
+ * A simple screen that is used when game is won - displays score
  */
 public class WinScreen extends ScreenAdapter {
 

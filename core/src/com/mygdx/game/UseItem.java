@@ -1,5 +1,5 @@
 package com.mygdx.game;
-
+//ASSESSMENT updated packages (change 7)
 import com.mygdx.game.assets.Assets;
 import com.mygdx.game.battle.BattleAnimator;
 import com.mygdx.game.battle.BattleMenu;
@@ -106,7 +106,7 @@ public class UseItem extends UseAbility {
                     System.out.println(Game.party.getConsumables().size());
                     System.out.println(Game.party.getConsumables().toString());
                     */
-                    //ASSESSMENT 3 change
+                    //ASSESSMENT 3 change (19)
                     Game.party.removeConsumable(item.getID());
                     //END ASSESSMENT 3 change
                     battleMenu.createInfoBox(target.getName() + " is healed for " + item.getPower()
@@ -122,7 +122,7 @@ public class UseItem extends UseAbility {
                     System.out.println(Game.party.getConsumables().size());
                     System.out.println(Game.party.getConsumables().toString());
                     */
-                    //ASSESSMENT 3 change
+                    //ASSESSMENT 3 change (19)
                     Game.party.removeConsumable(item.getID());
                     //END ASSESSMENT 3 change
                     battleMenu.createInfoBox(target.getName() + " is revived on " + item.getPower()
@@ -138,7 +138,7 @@ public class UseItem extends UseAbility {
                     System.out.println(Game.party.getConsumables().size());
                     System.out.println(Game.party.getConsumables().toString());
                     */
-                    //ASSESSMENT 3 change
+                    //ASSESSMENT 3 change (19)
                     Game.party.removeConsumable(item.getID());
                     //END ASSESSMENT 3 change
                     battleMenu.createInfoBox(target.getName() + " gains " + item.getPower()

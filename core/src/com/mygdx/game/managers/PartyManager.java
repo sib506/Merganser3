@@ -1,5 +1,5 @@
 package com.mygdx.game.managers;
-
+//ASSESSMENT updated packages (change 7)
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Agent;
 import com.mygdx.game.assets.Assets;
@@ -114,7 +114,7 @@ public class PartyManager {
     
     /**
      * function to remove consumables as they get consummed
-     * added for assessment 3
+     * added for assessment 3 - change 19
      */
     public void removeConsumable(int id){
     	for (int i = 0; i<consumables.size(); i++){
@@ -147,7 +147,7 @@ public class PartyManager {
     }
 	/**
 	 * adds a consumable refernce to the list of consumables
-	 * function added for assessment 3
+	 * function added for assessment 3 - change 19
 	 */
 	public void addConsumable(int id) {
 		consumables.add(id);

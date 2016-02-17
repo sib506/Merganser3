@@ -52,15 +52,11 @@ public class SallyNPC extends NPC {
 
             
             //add the new consumable type to items and the new consumable reference to party
-//            Game.items.addConsumable(new Consumable("Health", "Much health", consumeType.HEAL, 10));
             Game.party.addConsumable(0);
             Game.party.addConsumable(1);
             Game.party.addConsumable(2);
             Game.party.addConsumable(0);
             
-//            Game.pointsScore += 40;
-//            Game.objectivesComplete += 1;
-//            Game.objectives[0] = true;
             doneInteraction = true;
             level.characters.remove(this);
             //END ASSESSMENT 3 changes

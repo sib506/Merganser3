@@ -11,10 +11,10 @@ import com.mygdx.game.assets.Assets;
 import com.mygdx.game.input.InputHandler;
 
 /**
- * The party menu allows the user to see information about each party member. It
- * contains a party member's skills and statistics.
+ * The map allows the user to see a world map
+ * along with pointer to current location on map
  * 
- * class added for assessment 3
+ * NEW class added for assessment 3 (change 14)
  */
 public class UIMap extends UIComponent {
 
@@ -40,7 +40,7 @@ public class UIMap extends UIComponent {
 	}
 
 	/**
-	 * Called once per frame to render the party menu.
+	 * Called once per frame to render the map
 	 */
 	@Override
 	public void render(SpriteBatch batch, NinePatch patch) {
@@ -66,8 +66,7 @@ public class UIMap extends UIComponent {
 	}
 
 	/**
-	 * Called once per frame to handle input logic for selecting a player and
-	 * exiting the menu.
+	 * Called once per frame to handle closing of map
 	 * 
 	 * @return returns true if the dialogue box should continue to be displayed.
 	 */
@@ -81,6 +80,14 @@ public class UIMap extends UIComponent {
 
 	}
 
+	/**
+     * Helper function for render that actually does the text rendering.
+     * @param batch the spritebatch to use.
+     * @param message The string to add.
+     * @param x The x location.
+     * @param y The y location.
+     * @param color The colour to render the text as.
+     */
 	public void renderText(SpriteBatch batch, String message, float x, float y, Color color) {
 		GlyphLayout layout = new GlyphLayout(font, message, Color.BLACK, width - paddingX * 2, Align.left, false);
 

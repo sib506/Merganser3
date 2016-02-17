@@ -1,5 +1,5 @@
 package com.mygdx.game;
-
+//ASSESSMENT 3 UPDATE - Package Update (7)
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Json;
 import com.mygdx.game.managers.ItemManager;

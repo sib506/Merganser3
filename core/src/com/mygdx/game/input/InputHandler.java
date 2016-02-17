@@ -223,9 +223,11 @@ public class InputHandler {
         leftPressed = false;
         actPressed = false;
         escPressed = false;
+      //ASSESSMENT 3 change(11,15)
         oPressed = false;
         mPressed = false;
         shiftPressed = false;
+        // END CHANGE
 
         upJustPressed = false;
         downJustPressed = false;
@@ -237,6 +239,7 @@ public class InputHandler {
         OJustPressed = false;
         MJustPressed = false;
         shiftJustPressed = false;
+        // END CHANGE
     }
     public static void enableAllInput(){
         isInputEnabled=true;

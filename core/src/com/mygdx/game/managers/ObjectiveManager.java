@@ -4,8 +4,9 @@ import java.util.LinkedHashMap;
 
 import com.mygdx.game.Game;
 import com.mygdx.game.Objective;
-// ASSESSMENT 3 START//
+// ASSESSMENT 3 START - Change 11//
 /**
+ * NEW CLASS - ASSESMENT 3 Change 11
  * Stores and manages objectives within the game.
  */
 public class ObjectiveManager {

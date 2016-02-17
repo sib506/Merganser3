@@ -1,5 +1,5 @@
 /*
-gameworld refernces removed in assessment 3
+gameworld refernces removed in assessment 3 - change 5
 */
 package com.mygdx.game;
 
@@ -20,8 +20,10 @@ public class Level {
 
     public TiledMap map;
     public boolean[][] collisionMap;
+    // Assessment 3 Change (15)
     public boolean[][] waterMap;
     public String[][] locationMap;
+    // Assessment 3 End
     public Player player;
     public ArrayList<Character> characters;
     public boolean stopInput;
@@ -34,7 +36,7 @@ public class Level {
 
     /**
      * The constructor loads the map and creates a new player in the appropriate position.
-     * Modified for ASSESSMENT 3
+     * Modified for ASSESSMENT 3 (change 15)
      */
     public Level(GameWorld gameWorld) {
         map = new TmxMapLoader().load("newMap.tmx");
@@ -45,11 +47,13 @@ public class Level {
         tileWidth = prop.get("tilewidth", Integer.class);
         tileHeight = prop.get("tileheight", Integer.class);
         mapBounds = new Vector2(mapWidth * tileWidth, mapHeight * tileHeight);
-
+        
         collisionMap = new boolean[mapWidth][mapHeight];
+        // Assessment 3 Change (15)
         locationMap = new String[mapWidth][mapHeight];
         waterMap = new boolean[mapWidth][mapHeight];
         TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(0);
+        // Assessment 3 Change (15)
         TiledMapTileLayer locationLayer = (TiledMapTileLayer) map.getLayers().get(1);
         for (int x = 0; x < mapWidth; x++) {
             for (int y = mapHeight - 1; y >= 0; y--) {
@@ -85,8 +89,6 @@ public class Level {
     public void update(float delta) {
         characters.sort(new Character.CharacterComparator());
         updateCollisionMap();
-//        updateWaterMap();
-//        updateLocationMap();
         for (int i = 0; i < characters.size(); i++) {
             characters.get(i).update(delta);
         }

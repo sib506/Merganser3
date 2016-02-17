@@ -1,5 +1,5 @@
 package com.mygdx.game.battle;
-
+//ASSESSMENT removed imports (change 6)
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -181,7 +181,7 @@ public class BattleScreen extends ScreenAdapter {
     public int getTarget(Agent.AgentType typeToGet){
         Random random = new Random();
         int index = random.nextInt(turnOrder.size());
-        //ASSESSMENT 3 chnage (11)
+        //ASSESSMENT 3 chnage (4)
         if(turnOrder.get(index).type!=typeToGet || turnOrder.get(index).isDead())
             return getTarget(typeToGet);
         else
@@ -197,7 +197,7 @@ public class BattleScreen extends ScreenAdapter {
         if(turnOrder.get(turnOrderPointer).type== Agent.AgentType.FRIENDLY) {
             turnOrder.get(turnOrderPointer).setX(turnOrder.get(turnOrderPointer).getX() + 10);
             battleMenu.resetMenus(); //Reset battleUI menus
-            //ASESSMENT 3 AMENDMENT
+            //ASESSMENT 3 AMENDMENT - change 2
             battleMenu.setItemMenuSize(Game.party.getConsumables().size());
         }
         //Check for win/lose condition
@@ -281,7 +281,9 @@ public class BattleScreen extends ScreenAdapter {
     }
 
     /**
-     * Returns the game to the world screen if the battle is over.
+     * ASSESSMENT 3 CHANGE 10
+     * Returns the game to the world screen if the battle is over sucessfully,
+     * If lost then ends game.
      */
     public void endBattle(){
         if(isBattleOver){

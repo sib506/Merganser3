@@ -3,7 +3,7 @@ package com.mygdx.game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+// Assessment 3 Change (7)
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.UI.UICurrentLocation;
 import com.mygdx.game.UI.UIManager;
@@ -36,9 +36,12 @@ public class GameWorld {
         this.game = game;
         gameState = GameState.FREEROAM;
         level = new Level(this);
+        // Assessment 3 change (12,14)
         uiManager = new UIManager(Game.party, game.objectiveManager, level);
+        // END ASSESSMENT 3
         battleChance = 2000;
         level.characters.add(new SallyNPC(level, new Vector2(108, 91)));
+        // Assessment 3 deletion (11) - RoboDuck now created by completing obj
         uiManager.addUIComponent(new UIScore());
         //ASSESSMENT 3 change (13)
         uiManager.addUIComponent(new UICurrentLocation());
@@ -77,8 +80,10 @@ public class GameWorld {
                     uiManager.createDialogue(new String[] {"You have been stopped by a group of... somethings!"});
                     level.stopInput = true;
                     battleChance = 1000;
+                    // ASSESSMENT 3 Change (13)
                     BattleParameters params = new BattleParameters(getBackgroundFromLocation());
-
+                    // END ASSESSMENT 3
+                    
                     //Get a number of agents from the list of enemies, make new agent instances with their information and setup the next battle
                     for(int i=0;i<random.nextInt(3)+1;i++){
                         Agent thisAgent = Game.enemies.getMember(random.nextInt(Game.enemies.size()));
@@ -118,6 +123,7 @@ public class GameWorld {
                         }
                     }
                     //END ASSESSMENT 3 change
+                // ASSESSMENT 3 change (14)
                     else if (InputHandler.isMJustPressed()){
                     	interactingNPC = level.player.interactingNPC;
                         level.stopInput = true;
@@ -128,6 +134,7 @@ public class GameWorld {
                             uiManager.openMap();
                             gameState = GameState.MAP;
                         }
+                      //END ASSESSMENT 3 change
                     }
                 break;
 
@@ -143,12 +150,13 @@ public class GameWorld {
                 }
                 break;
             //END ASSESSMENT 3 change
+             // ASSESSMENT 3 change (14)
             case MAP:
             	 if (!uiManager.updateMap(delta)){
                      gameState = GameState.FREEROAM;
                  }
                  break;
-                
+               //END ASSESSMENT 3 change
             case INTERACTION:
                 if (!interactingNPC.updateInteracting(delta)) {
                     interactingNPC.action(this);

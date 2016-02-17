@@ -48,16 +48,11 @@ public class EvilNPC extends NPC {
         uiManager.addNotification("You defeated the RoboDuck MK II! You got 150 points!");
         //ASSESSMENT 3 change (17)
         gameWorld.game.objectiveManager.completeObjective("RoboDuck2");
-//        Game.objectivesComplete += 1;
-//        Game.objectives[1] = true;
-//        Game.pointsScore += 100;
         //END ASSESSMENT 3 changes
         BattleParameters params = new BattleParameters(4);
         //Enemy ducks
         List<Integer> emptyList = new ArrayList<Integer>();
         Agent enemyDuck = new Agent("RoboDuck MK II", Agent.AgentType.ENEMY,new Statistics(300,500,8,2,3,3,3,3,3),emptyList,new CurrentEquipment(0,0,0,0,0),1);
-//        enemyDuck.equipEquipment(0);
-//        enemyDuck.equipEquipment(1);
         enemyDuck.addSkill(18);
 
         params.addEnemy(enemyDuck);

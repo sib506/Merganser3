@@ -1,5 +1,3 @@
-//EDITTED IN ASSESMENT 3
-
 package com.mygdx.game.screens;
 
 import com.badlogic.gdx.Gdx;
@@ -16,7 +14,8 @@ import com.mygdx.game.assets.Assets;
 import com.mygdx.game.input.InputHandler;
 
 /**
- * A simple screen that is used when the game is won or lost
+ * NEW CLASS ASSESSMENT 3 - Change 10
+ * A simple screen that is used when the game is lost displaying last score
  */
 public class EndScreen extends ScreenAdapter {
 

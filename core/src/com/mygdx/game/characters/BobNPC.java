@@ -8,9 +8,9 @@ import com.mygdx.game.Objective;
 import com.mygdx.game.UI.UIManager;
 
 /**
- * This class represents the first npc of the game.
+ * This class represents the third npc of the game.
  * 
- * Class produced for assessment 3
+ * Class produced for assessment 3 (change 17)
  */
 public class BobNPC extends NPC {
 
@@ -54,11 +54,7 @@ public class BobNPC extends NPC {
             Game.party.addConsumable(0);
             Game.party.addConsumable(1);
             Game.party.addConsumable(2);
-//            Game.pointsScore += 40;
-//            Game.objectivesComplete += 1;
-//            Game.objectives[0] = true;
             doneInteraction = true;
-//            level.characters.remove(this);
         }
     }
 }

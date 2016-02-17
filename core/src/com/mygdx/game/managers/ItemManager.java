@@ -1,5 +1,5 @@
 package com.mygdx.game.managers;
-
+//ASSESSMENT updated packages (change 7)
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +70,7 @@ public class ItemManager {
 	
 	/**
 	 * Getter for list of consumables
-	 * Added for assessment 3
+	 * Added for assessment 3 - change 19
 	 */ 
 	public List<Consumable> getConsumables() {
 		

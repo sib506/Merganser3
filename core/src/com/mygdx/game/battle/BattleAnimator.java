@@ -20,7 +20,7 @@ public class BattleAnimator {
 
     UseAbility currentCaller;
 
-
+    // ASSESSMENT 3 Change (5) - constructor shouldn't be void
     public BattleAnimator(){
 
     }
