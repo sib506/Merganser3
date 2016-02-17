@@ -53,7 +53,7 @@ public class ObjectiveManager {
 	 */
 	public void battleWon() {
 		battlesWon += 1;
-		if (battlesWon == 10 && !gameObjectives.get("10Batt").isComplete()) {
+		if (battlesWon == 10 && gameObjectives.containsKey("10Batt")){
 			completeObjective("10Batt");
 			ObjectiveNotification("You won 10 battles! You got 50 points!");
 			Game.party.addConsumable(0);
